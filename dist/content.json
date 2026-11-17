@@ -74,6 +74,13 @@
       "image": "assets/sabor-7-1794898577771.png",
       "focus": "50% 50%",
       "zoom": 1
+    },
+    {
+      "name": "Coco con Batata",
+      "subtitle": "¡El sabor de nuestras tradiciones!",
+      "image": "assets/sabor-8-1794898643208.png",
+      "focus": "50% 50%",
+      "zoom": 1
     }
   ],
   "product": {
