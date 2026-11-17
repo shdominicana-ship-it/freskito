@@ -1,7 +1,21 @@
 {
-  "branding": {"logo": "assets/logo-freskito-transparente.png"},
-  "nav": {"product": "El producto", "flavors": "Sabores", "sales": "Puntos de venta", "contact": "Contáctanos"},
-  "actions": {"discover": "Descubre los sabores", "find": "Encuentra tu FRESKITO", "askStore": "Preguntar por un punto de venta", "partner": "Quiero ser Punto Aliado", "whatsapp": "Escribir por WhatsApp", "call": "Llamar ahora"},
+  "branding": {
+    "logo": "assets/logo-freskito-transparente.png"
+  },
+  "nav": {
+    "product": "El producto",
+    "flavors": "Sabores",
+    "sales": "Puntos de venta",
+    "contact": "Contáctanos"
+  },
+  "actions": {
+    "discover": "Descubre los sabores",
+    "find": "Encuentra tu FRESKITO",
+    "askStore": "Preguntar por un punto de venta",
+    "partner": "Quiero ser Punto Aliado",
+    "whatsapp": "Escribir por WhatsApp",
+    "call": "Llamar ahora"
+  },
   "hero": {
     "eyebrow": "Helados artesanales · 100 % natural",
     "title": "Sabor que refresca.",
@@ -12,12 +26,48 @@
     "image": "assets/productos-freskito.jpg"
   },
   "heroSlides": [
-    {"name":"Dulce de leche","subtitle":"Cremoso y envolvente","image":"assets/productos-freskito.jpg","focus":"17% 48%","zoom":2.15},
-    {"name":"Galletas y crema","subtitle":"El clásico que siempre alegra","image":"assets/productos-freskito.jpg","focus":"37% 48%","zoom":2.15},
-    {"name":"Chocolate y avellanas","subtitle":"Intenso y delicioso","image":"assets/productos-freskito.jpg","focus":"55% 48%","zoom":2.15},
-    {"name":"Fresa","subtitle":"Frutal y refrescante","image":"assets/productos-freskito.jpg","focus":"72% 48%","zoom":2.15},
-    {"name":"Coco","subtitle":"Sabor tropical","image":"assets/productos-freskito.jpg","focus":"88% 48%","zoom":2.15},
-    {"name":"Todos los sabores","subtitle":"¿Cuál vas a probar primero?","image":"assets/productos-freskito.jpg","focus":"50% 50%","zoom":1}
+    {
+      "name": "Dulce de leche",
+      "subtitle": "¡Cremoso, irresistible y delicioso!",
+      "image": "assets/sabor-1-1794896107530.png",
+      "focus": "17% 48%",
+      "zoom": 2.15
+    },
+    {
+      "name": "Galletas y crema",
+      "subtitle": "El clásico que siempre alegra",
+      "image": "assets/productos-freskito.jpg",
+      "focus": "37% 48%",
+      "zoom": 2.15
+    },
+    {
+      "name": "Chocolate y avellanas",
+      "subtitle": "Intenso y delicioso",
+      "image": "assets/productos-freskito.jpg",
+      "focus": "55% 48%",
+      "zoom": 2.15
+    },
+    {
+      "name": "Fresa",
+      "subtitle": "Frutal y refrescante",
+      "image": "assets/productos-freskito.jpg",
+      "focus": "72% 48%",
+      "zoom": 2.15
+    },
+    {
+      "name": "Coco",
+      "subtitle": "Sabor tropical",
+      "image": "assets/productos-freskito.jpg",
+      "focus": "88% 48%",
+      "zoom": 2.15
+    },
+    {
+      "name": "Todos los sabores",
+      "subtitle": "¿Cuál vas a probar primero?",
+      "image": "assets/productos-freskito.jpg",
+      "focus": "50% 50%",
+      "zoom": 1
+    }
   ],
   "product": {
     "eyebrow": "Naturalmente delicioso",
@@ -26,9 +76,18 @@
     "description": "FRESKITO une ingredientes naturales, elaboración artesanal y una presentación práctica para que disfrutes tu sabor favorito donde quieras."
   },
   "benefits": [
-    {"title": "100 % natural", "text": "Una propuesta artesanal que pone lo natural en el centro de cada momento refrescante."},
-    {"title": "Sabores para elegir", "text": "Una selección de sabores clásicos y gourmet para que siempre encuentres tu favorito."},
-    {"title": "Fácil de disfrutar", "text": "Presentación individual, reconocible y perfecta para llevar o disfrutar al instante."}
+    {
+      "title": "100 % natural",
+      "text": "Una propuesta artesanal que pone lo natural en el centro de cada momento refrescante."
+    },
+    {
+      "title": "Sabores para elegir",
+      "text": "Una selección de sabores clásicos y gourmet para que siempre encuentres tu favorito."
+    },
+    {
+      "title": "Fácil de disfrutar",
+      "text": "Presentación individual, reconocible y perfecta para llevar o disfrutar al instante."
+    }
   ],
   "flavors": {
     "eyebrow": "Elige tu momento",
@@ -37,7 +96,46 @@
     "description": "Desde los cremosos de siempre hasta los frutales más refrescantes. ¿Cuál vas a probar primero?"
   },
   "flavorItems": [
-    {"emoji":"🍮","label":"Cremoso","name":"Dulce de leche"},{"emoji":"🍪","label":"Clásico","name":"Galletas y crema"},{"emoji":"🍫","label":"Intenso","name":"Chocolate y avellanas"},{"emoji":"🍓","label":"Frutal","name":"Fresa"},{"emoji":"🥥","label":"Tropical","name":"Coco"},{"emoji":"🥭","label":"Tropical","name":"Mango"},{"emoji":"☀️","label":"Refrescante","name":"Chinola"},{"emoji":"🌿","label":"Especial","name":"Guanábana"}
+    {
+      "emoji": "🍮",
+      "label": "Cremoso",
+      "name": "Dulce de leche"
+    },
+    {
+      "emoji": "🍪",
+      "label": "Clásico",
+      "name": "Galletas y crema"
+    },
+    {
+      "emoji": "🍫",
+      "label": "Intenso",
+      "name": "Chocolate y avellanas"
+    },
+    {
+      "emoji": "🍓",
+      "label": "Frutal",
+      "name": "Fresa"
+    },
+    {
+      "emoji": "🥥",
+      "label": "Tropical",
+      "name": "Coco"
+    },
+    {
+      "emoji": "🥭",
+      "label": "Tropical",
+      "name": "Mango"
+    },
+    {
+      "emoji": "☀️",
+      "label": "Refrescante",
+      "name": "Chinola"
+    },
+    {
+      "emoji": "🌿",
+      "label": "Especial",
+      "name": "Guanábana"
+    }
   ],
   "sales": {
     "eyebrow": "Cerca de ti",
@@ -48,18 +146,46 @@
     "priceLabel": "Precio sugerido",
     "priceUnit": "por unidad"
   },
-  "locations": [{"title":"Colmados y minimarkets","text":"Un antojo rápido para llevar, visible cerca del congelador y de la caja."},{"title":"Reposterías y cafeterías","text":"El complemento frío ideal para la oferta dulce y las compras por impulso."}],
-  "storesSection": {"eyebrow":"Encuéntranos","title":"Puntos de venta","highlight":"cada vez más cerca de ti.","description":"Conoce los establecimientos que forman parte del programa de Puntos Aliados FRESKITO."},
+  "locations": [
+    {
+      "title": "Colmados y minimarkets",
+      "text": "Un antojo rápido para llevar, visible cerca del congelador y de la caja."
+    },
+    {
+      "title": "Reposterías y cafeterías",
+      "text": "El complemento frío ideal para la oferta dulce y las compras por impulso."
+    }
+  ],
+  "storesSection": {
+    "eyebrow": "Encuéntranos",
+    "title": "Puntos de venta",
+    "highlight": "cada vez más cerca de ti.",
+    "description": "Conoce los establecimientos que forman parte del programa de Puntos Aliados FRESKITO."
+  },
   "stores": [],
-  "orders": {"title":"Pide tu FRESKITO","description":"Haz tu pedido o consulta disponibilidad directamente por WhatsApp.","displayPhone":"829 758 4030","whatsapp":"18297584030"},
-  "office": {"title":"Oficinas FRESKITO","address":"Núñez de Cáceres no. 22, Plaza 2B, San Gerónimo, Distrito Nacional."},
+  "orders": {
+    "title": "Pide tu FRESKITO",
+    "description": "Haz tu pedido o consulta disponibilidad directamente por WhatsApp.",
+    "displayPhone": "829 758 4030",
+    "whatsapp": "18297584030"
+  },
+  "office": {
+    "title": "Oficinas FRESKITO",
+    "address": "Núñez de Cáceres no. 22, Plaza 2B, San Gerónimo, Distrito Nacional."
+  },
   "partners": {
     "eyebrow": "Para negocios",
     "title": "Conviértete en un",
     "highlight": "Punto Aliado FRESKITO.",
     "description": "Incorpora una selección de sabores clásicos y gourmet a tu negocio con precios especiales, descuentos por volumen, material publicitario y coordinación de reposiciones."
   },
-  "partnerBenefits": ["Incorporación gratuita","Precios comerciales","Descuentos por volumen","Material promocional","Apoyo y reposición"],
+  "partnerBenefits": [
+    "Incorporación gratuita",
+    "Precios comerciales",
+    "Descuentos por volumen",
+    "Material promocional",
+    "Apoyo y reposición"
+  ],
   "contact": {
     "eyebrow": "Hablemos",
     "title": "¿Listo para probar",
@@ -75,5 +201,7 @@
     "tiktok": "",
     "youtube": ""
   },
-  "footer": {"tagline": "La frescura que te alegra."}
+  "footer": {
+    "tagline": "La frescura que te alegra."
+  }
 }
