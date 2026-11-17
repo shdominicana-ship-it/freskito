@@ -42,6 +42,25 @@ function configureCarousel(content){
   carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',restart);carousel.addEventListener('focusin',()=>clearInterval(timer));carousel.addEventListener('focusout',restart);restart();
 }
 
+function configureStores(content){
+  const grid=document.querySelector('#store-grid');if(!grid)return;grid.innerHTML='';
+  const stores=content.stores||[];
+  if(!stores.length){const empty=document.createElement('div');empty.className='store-empty reveal visible';empty.innerHTML='<span>Próximamente</span><h3>Estamos sumando nuevos Puntos Aliados</h3><p>Escríbenos para conocer el punto de venta más cercano o para agregar tu negocio a nuestra red.</p>';grid.appendChild(empty)}
+  stores.forEach(store=>{
+    const card=document.createElement('article');card.className='store-card reveal visible';
+    const channel=document.createElement('span');channel.className='store-channel';channel.textContent=store.channel||'Punto Aliado';
+    const title=document.createElement('h3');title.textContent=store.name||'Punto Aliado FRESKITO';
+    const address=document.createElement('p');address.textContent=store.address||'';card.append(channel,title,address);
+    const actions=document.createElement('div');actions.className='store-actions';
+    if(store.mapUrl){const map=document.createElement('a');map.href=store.mapUrl;map.target='_blank';map.rel='noopener';map.textContent='Ver en el mapa →';actions.appendChild(map)}
+    if(store.whatsapp||store.phone){const number=String(store.whatsapp||store.phone).replace(/\D/g,'');const contact=document.createElement('a');contact.href=store.whatsapp?`https://wa.me/${number}`:`tel:${store.phone}`;contact.target=store.whatsapp?'_blank':'_self';contact.rel='noopener';contact.textContent=store.phone||store.whatsapp;actions.appendChild(contact)}
+    card.appendChild(actions);grid.appendChild(card);
+  });
+  const orderNumber=String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'');
+  document.querySelectorAll('[data-order-whatsapp]').forEach(link=>link.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent('Hola FRESKITO, quiero realizar un pedido.')}`);
+  const officeAddress=content.office?.address||'';document.querySelectorAll('[data-office-map]').forEach(link=>link.href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`);
+}
+
 async function loadContent(){
   try{
     const response=await fetch(`content.json?v=${Date.now()}`);
@@ -49,7 +68,7 @@ async function loadContent(){
     const content=await response.json();
     document.querySelectorAll('[data-content]').forEach(element=>{const value=getPath(content,element.dataset.content);if(value!==undefined)element.textContent=value});
     document.querySelectorAll('[data-image]').forEach(image=>{const value=getPath(content,image.dataset.image);if(value)image.src=value});
-    configureContact(content);configureSocial(content);configureCarousel(content);
+    configureContact(content);configureSocial(content);configureCarousel(content);configureStores(content);
   }catch(error){console.warn(error)}
 }
 

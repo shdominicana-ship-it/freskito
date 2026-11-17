@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
-  <link rel="stylesheet" href="admin-carousel.css">
+  <link rel="stylesheet" href="admin-carousel.css?v=20261117-4">
 </head>
 <body>
   <header class="admin-header">
@@ -68,6 +68,14 @@
           <label>Descripción de aliados<textarea data-path="partners.description" rows="3"></textarea></label>
         </fieldset>
 
+        <fieldset id="puntos"><legend>Directorio de puntos de venta</legend><p>Agrega los canales de venta aliados con sus datos de contacto y ubicación.</p>
+          <div id="store-admin-list"></div><button type="button" class="secondary" id="add-store">+ Agregar punto de venta</button>
+          <div class="divider"></div><h3>Pedidos y oficinas</h3>
+          <div class="grid two"><label>Número visible para pedidos<input data-path="orders.displayPhone"></label><label>WhatsApp para pedidos<input data-path="orders.whatsapp" inputmode="numeric"></label></div>
+          <label>Texto de pedidos<textarea data-path="orders.description" rows="2"></textarea></label>
+          <label>Dirección de las oficinas<textarea data-path="office.address" rows="2"></textarea></label>
+        </fieldset>
+
         <fieldset id="contacto"><legend>Contacto y WhatsApp</legend><p>Escribe los números con código de país. Ejemplo: 18297584030.</p>
           <div class="grid two"><label>Número mostrado<input data-path="contact.displayPhone"></label><label>Número para llamadas<input data-path="contact.phone"></label></div>
           <label>Número de WhatsApp<input data-path="contact.whatsapp" inputmode="numeric"></label>
@@ -88,6 +96,6 @@
     </section>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="admin.js?v=20261117-3"></script>
+  <script src="admin.js?v=20261117-4"></script>
 </body>
 </html>

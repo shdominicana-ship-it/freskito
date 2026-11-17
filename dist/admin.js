@@ -31,13 +31,24 @@ async function connect(event){
 }
 
 function buildEditor(){
-  const sections=[['portada','Portada'],['marca','Marca'],['producto','Producto'],['sabores','Sabores'],['ventas','Ventas'],['contacto','Contacto'],['redes','Redes sociales'],['avanzado','Avanzado']];
+  const sections=[['portada','Portada'],['marca','Marca'],['producto','Producto'],['sabores','Sabores'],['ventas','Ventas'],['puntos','Puntos de venta'],['contacto','Contacto'],['redes','Redes sociales'],['avanzado','Avanzado']];
   $('#section-nav').innerHTML=sections.map(([id,label])=>`<a href="#${id}">${label}</a>`).join('');
   $('#benefit-fields').innerHTML=content.benefits.map((benefit,index)=>`<div class="repeat-card"><h3>Beneficio ${index+1}</h3><label>Título<input data-path="benefits.${index}.title"></label><label>Descripción<textarea rows="4" data-path="benefits.${index}.text"></textarea></label></div>`).join('');
   $('#slide-fields').innerHTML=(content.heroSlides||[]).map((slide,index)=>`<div class="slide-admin-card"><img id="preview-slide-${index}" src="${slide.image}" alt="Vista previa de ${slide.name}"><label>Nombre del sabor<input data-path="heroSlides.${index}.name"></label><label>Frase corta<input data-path="heroSlides.${index}.subtitle"></label><label class="upload">Cambiar fotografía<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="heroSlides.${index}.image" data-preview="preview-slide-${index}"><span>Seleccionar imagen</span><small>JPG, PNG o WebP · máximo 4 MB</small></label></div>`).join('');
-  $$('[data-path]').forEach(field=>{field.value=getPath(content,field.dataset.path)??'';field.addEventListener('input',()=>{setPath(content,field.dataset.path,field.value);markDirty()})});
+  renderStoreEditors();bindContentFields();
+  $('#add-store').onclick=()=>{content.stores=content.stores||[];content.stores.push({name:'Nuevo Punto Aliado',channel:'Colmado / Minimarket',address:'',phone:'',whatsapp:'',mapUrl:''});renderStoreEditors();markDirty()};
   $('#preview-hero').src=content.hero.image;$('#preview-logo').src=content.branding.logo;syncJson();
   $$('[data-upload]').forEach(input=>input.addEventListener('change',previewUpload));
+}
+
+function bindContentFields(scope=document){
+  [...scope.querySelectorAll('[data-path]')].forEach(field=>{if(field.dataset.bound)return;field.dataset.bound='true';field.value=getPath(content,field.dataset.path)??'';field.addEventListener('input',()=>{setPath(content,field.dataset.path,field.value);markDirty()})});
+}
+
+function renderStoreEditors(){
+  const list=$('#store-admin-list');if(!list)return;content.stores=content.stores||[];
+  list.innerHTML=content.stores.length?content.stores.map((store,index)=>`<div class="store-admin-card"><h3>Punto de venta ${index+1}</h3><button type="button" class="remove-store" data-remove-store="${index}">Eliminar</button><div class="grid two"><label>Nombre<input data-path="stores.${index}.name"></label><label>Canal de venta<input data-path="stores.${index}.channel" placeholder="Colmado, minimarket, cafetería…"></label></div><label>Dirección<textarea data-path="stores.${index}.address" rows="2"></textarea></label><div class="grid two"><label>Teléfono visible<input data-path="stores.${index}.phone"></label><label>WhatsApp con código de país<input data-path="stores.${index}.whatsapp" inputmode="numeric"></label></div><label>Enlace de Google Maps<input data-path="stores.${index}.mapUrl" type="url" placeholder="https://maps.app.goo.gl/…"></label></div>`).join(''):'<p class="help">Todavía no hay puntos de venta registrados.</p>';
+  bindContentFields(list);list.querySelectorAll('[data-remove-store]').forEach(button=>button.onclick=()=>{content.stores.splice(Number(button.dataset.removeStore),1);renderStoreEditors();markDirty()});
 }
 
 function previewUpload(event){

@@ -1,6 +1,6 @@
 {
   "branding": {"logo": "assets/logo-freskito-transparente.png"},
-  "nav": {"product": "El producto", "flavors": "Sabores", "sales": "Dónde comprar", "contact": "Contáctanos"},
+  "nav": {"product": "El producto", "flavors": "Sabores", "sales": "Puntos de venta", "contact": "Contáctanos"},
   "actions": {"discover": "Descubre los sabores", "find": "Encuentra tu FRESKITO", "askStore": "Preguntar por un punto de venta", "partner": "Quiero ser Punto Aliado", "whatsapp": "Escribir por WhatsApp", "call": "Llamar ahora"},
   "hero": {
     "eyebrow": "Helados artesanales · 100 % natural",
@@ -49,6 +49,10 @@
     "priceUnit": "por unidad"
   },
   "locations": [{"title":"Colmados y minimarkets","text":"Un antojo rápido para llevar, visible cerca del congelador y de la caja."},{"title":"Reposterías y cafeterías","text":"El complemento frío ideal para la oferta dulce y las compras por impulso."}],
+  "storesSection": {"eyebrow":"Encuéntranos","title":"Puntos de venta","highlight":"cada vez más cerca de ti.","description":"Conoce los establecimientos que forman parte del programa de Puntos Aliados FRESKITO."},
+  "stores": [],
+  "orders": {"title":"Pide tu FRESKITO","description":"Haz tu pedido o consulta disponibilidad directamente por WhatsApp.","displayPhone":"829 758 4030","whatsapp":"18297584030"},
+  "office": {"title":"Oficinas FRESKITO","address":"Núñez de Cáceres no. 22, Plaza 2B, San Gerónimo, Distrito Nacional."},
   "partners": {
     "eyebrow": "Para negocios",
     "title": "Conviértete en un",
