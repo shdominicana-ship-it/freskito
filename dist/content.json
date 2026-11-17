@@ -31,17 +31,17 @@
       "name": "Dulce de leche",
       "subtitle": "¡Cremoso, irresistible y delicioso!",
       "description": "Una experiencia suave y envolvente, con el sabor acaramelado del dulce de leche y una textura artesanal deliciosamente cremosa.",
-      "image": "assets/sabor-1-1794896107530.png",
-      "focus": "17% 48%",
-      "zoom": 2.15
+      "image": "assets/dulce-de-leche-horizontal-v2.png",
+      "focus": "50% 50%",
+      "zoom": 1
     },
     {
       "name": "Galletas y crema",
       "subtitle": "¡Cremosidad con un toque crujiente!",
       "description": "Una mezcla cremosa con deliciosos trocitos de galleta que aportan contraste y hacen especial cada cucharada.",
-      "image": "assets/sabor-2-1794896510754.png",
-      "focus": "37% 48%",
-      "zoom": 2.15
+      "image": "assets/galletas-crema-horizontal-v2.png",
+      "focus": "50% 50%",
+      "zoom": 1
     },
     {
       "name": "Fresa con Leche",
