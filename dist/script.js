@@ -61,6 +61,17 @@ function configureStores(content){
   const officeAddress=content.office?.address||'';document.querySelectorAll('[data-office-map]').forEach(link=>link.href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`);
 }
 
+function configureSeasonal(content){
+  const section=document.querySelector('.seasonal-products');const grid=document.querySelector('#seasonal-grid');if(!section||!grid)return;
+  const products=content.seasonalProducts||[];section.hidden=!products.length;grid.innerHTML='';
+  products.forEach((product,index)=>{
+    const card=document.createElement('article');card.className='seasonal-card reveal visible';
+    const media=document.createElement('div');media.className='seasonal-media';
+    if(product.image){const image=document.createElement('img');image.src=product.image;image.alt=`Helado FRESKITO de temporada sabor ${product.name}`;image.loading=index===0?'eager':'lazy';media.appendChild(image)}else{const placeholder=document.createElement('div');placeholder.className='seasonal-placeholder';placeholder.innerHTML='<span>🥭</span><small>Imagen próximamente</small>';media.appendChild(placeholder)}
+    const body=document.createElement('div');body.className='seasonal-body';const badge=document.createElement('span');badge.className='seasonal-badge';badge.textContent=product.badge||'Edición de temporada';const title=document.createElement('h3');title.textContent=product.name;const text=document.createElement('p');text.textContent=product.subtitle||'';const link=document.createElement('a');link.className='text-link';link.href=`https://wa.me/${String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'')}?text=${encodeURIComponent(`Hola FRESKITO, quiero pedir el sabor de temporada ${product.name}.`)}`;link.target='_blank';link.rel='noopener';link.textContent='Pedir por WhatsApp →';body.append(badge,title,text,link);card.append(media,body);grid.appendChild(card);
+  });
+}
+
 async function loadContent(){
   try{
     const response=await fetch(`content.json?v=${Date.now()}`);
@@ -68,7 +79,7 @@ async function loadContent(){
     const content=await response.json();
     document.querySelectorAll('[data-content]').forEach(element=>{const value=getPath(content,element.dataset.content);if(value!==undefined)element.textContent=value});
     document.querySelectorAll('[data-image]').forEach(image=>{const value=getPath(content,image.dataset.image);if(value)image.src=value});
-    configureContact(content);configureSocial(content);configureCarousel(content);configureStores(content);
+    configureContact(content);configureSocial(content);configureCarousel(content);configureStores(content);configureSeasonal(content);
   }catch(error){console.warn(error)}
 }
 

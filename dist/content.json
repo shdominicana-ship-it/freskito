@@ -5,6 +5,7 @@
   "nav": {
     "product": "El producto",
     "flavors": "Sabores",
+    "seasonal": "Temporada",
     "sales": "Puntos de venta",
     "contact": "Contáctanos"
   },
@@ -156,6 +157,20 @@
       "emoji": "🌿",
       "label": "Especial",
       "name": "Guanábana"
+    }
+  ],
+  "seasonalSection": {
+    "eyebrow": "Ediciones especiales",
+    "title": "Sabores de temporada.",
+    "highlight": "Disfrútalos mientras están aquí.",
+    "description": "Propuestas artesanales creadas por tiempo limitado para sorprenderte con algo nuevo."
+  },
+  "seasonalProducts": [
+    {
+      "name": "Mango",
+      "subtitle": "Tropical, cremoso y naturalmente refrescante.",
+      "badge": "Disponible por tiempo limitado",
+      "image": ""
     }
   ],
   "sales": {
