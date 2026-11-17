@@ -1,5 +1,5 @@
 {
-  "branding": {"logo": "assets/logo-freskito-oficial.svg"},
+  "branding": {"logo": "assets/logo-freskito-oficial.png"},
   "nav": {"product": "El producto", "flavors": "Sabores", "sales": "Dónde comprar", "contact": "Contáctanos"},
   "actions": {"discover": "Descubre los sabores", "find": "Encuentra tu FRESKITO", "askStore": "Preguntar por un punto de venta", "partner": "Quiero ser Punto Aliado", "whatsapp": "Escribir por WhatsApp", "call": "Llamar ahora"},
   "hero": {
