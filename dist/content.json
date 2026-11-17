@@ -30,15 +30,15 @@
       "name": "Dulce de leche",
       "subtitle": "¡Cremoso, irresistible y delicioso!",
       "image": "assets/sabor-1-1794896107530.png",
-      "focus": "17% 48%",
-      "zoom": 2.15
+      "focus": "50% 50%",
+      "zoom": 1
     },
     {
       "name": "Galletas y crema",
       "subtitle": "¡Cremosidad con un toque crujiente!",
       "image": "assets/sabor-2-1794896510754.png",
-      "focus": "37% 48%",
-      "zoom": 2.15
+      "focus": "50% 50%",
+      "zoom": 1
     },
     {
       "name": "Chocolate y avellanas",

@@ -76,7 +76,7 @@ async function publish(event){
     for(const [slot,file] of pendingUploads){
       const ext=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'');
       const name=slot==='hero.image'?'imagen-principal':slot==='branding.logo'?'logo':`sabor-${Number(slot.split('.')[1])+1}`;const path=`dist/assets/${name}-${Date.now()}.${ext}`;
-      await putFile(path,await fileToBase64(file),`Actualizar ${name} de FRESKITO`);setPath(content,slot,path.replace('dist/',''));
+      await putFile(path,await fileToBase64(file),`Actualizar ${name} de FRESKITO`);setPath(content,slot,path.replace('dist/',''));if(slot.startsWith('heroSlides.')){const slideIndex=Number(slot.split('.')[1]);content.heroSlides[slideIndex].zoom=1;content.heroSlides[slideIndex].focus='50% 50%'}
     }
     const latest=await api(`/repos/${OWNER}/${REPO}/contents/${CONTENT_PATH}?ref=${BRANCH}`);if(latest.ok)contentSha=(await latest.json()).sha;
     const result=await putFile(CONTENT_PATH,encodeBase64(`${JSON.stringify(content,null,2)}\n`),'Actualizar contenido del sitio FRESKITO',contentSha);
