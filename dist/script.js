@@ -1,5 +1,10 @@
 const getPath=(obj,path)=>path.split('.').reduce((value,key)=>value?.[key],obj);
 
+function fitFlavorImage(image,container){
+  const update=()=>{if(image.naturalWidth&&image.naturalHeight)container.classList.toggle('flavor-media-contain',image.naturalWidth/image.naturalHeight<1.2)};
+  image.addEventListener('load',update,{once:true});if(image.complete)update();
+}
+
 function configureContact(content){
   const whatsapp=String(content.contact?.whatsapp||'').replace(/\D/g,'');
   const phone=content.contact?.phone||`+${whatsapp}`;
@@ -68,8 +73,7 @@ function configureFlavorCatalog(content){
     dialogDescription.textContent=item.description||`${item.subtitle||'Un sabor preparado para disfrutar.'} Elaborado artesanalmente con ingredientes naturales y la frescura característica de FRESKITO.`;
     dialogImage.src=item.image;
     dialogImage.alt=`Helado FRESKITO sabor ${item.name}`;
-    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-focus','50% 50%');
-    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-zoom','1');
+    const dialogMedia=dialog.querySelector('.flavor-dialog-media');dialogMedia.classList.remove('flavor-media-contain');dialogMedia.style.setProperty('--flavor-focus','50% 50%');dialogMedia.style.setProperty('--flavor-zoom','1');fitFlavorImage(dialogImage,dialogMedia);
     dialogOrder.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent(`Hola FRESKITO, quiero pedir el sabor ${item.name}.`)}`;
     if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
     document.body.classList.add('dialog-open');
@@ -82,7 +86,7 @@ function configureFlavorCatalog(content){
   flavors.forEach((item,index)=>{
     const card=document.createElement('button');card.type='button';card.className='flavor-card flavor-catalog-card reveal visible';card.setAttribute('aria-label',`Ver detalles del sabor ${item.name}`);
     const media=document.createElement('span');media.className='flavor-card-media';media.style.setProperty('--flavor-focus','50% 50%');media.style.setProperty('--flavor-zoom','1');
-    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index<3?'eager':'lazy';media.appendChild(image);
+    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index<3?'eager':'lazy';media.appendChild(image);fitFlavorImage(image,media);
     const body=document.createElement('span');body.className='flavor-card-body';
     const natural=document.createElement('small');natural.textContent='100 % natural';
     const title=document.createElement('strong');title.textContent=item.name;
