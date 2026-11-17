@@ -67,6 +67,13 @@
       "image": "assets/sabor-6-1794897568335.png",
       "focus": "50% 50%",
       "zoom": 1
+    },
+    {
+      "name": "Nutella",
+      "subtitle": "¡Puro placer de chocolate y avellanas!",
+      "image": "assets/sabor-7-1794898577771.png",
+      "focus": "50% 50%",
+      "zoom": 1
     }
   ],
   "product": {
