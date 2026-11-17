@@ -106,6 +106,14 @@
       "image": "assets/sabor-10-1794959000437.png",
       "focus": "50% 50%",
       "zoom": 1
+    },
+    {
+      "name": "Pitahaya ",
+      "subtitle": "¡Un exótico placer tropical!",
+      "description": "Descubre la delicada dulzura de la pitahaya en un helado artesanal lleno de frescura y color. Su sabor suave, sus notas tropicales y su personalidad exótica hacen de cada bocado una experiencia diferente y refrescante.",
+      "image": "assets/sabor-11-1794959804367.png",
+      "focus": "50% 50%",
+      "zoom": 1
     }
   ],
   "product": {
