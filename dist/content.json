@@ -73,7 +73,7 @@
     "eyebrow": "Naturalmente delicioso",
     "title": "El sabor de siempre,",
     "highlight": "con una frescura diferente.",
-    "description": "FRESKITO une ingredientes naturales, elaboración artesanal y una presentación práctica para que disfrutes tu sabor favorito donde quieras."
+    "description": "FRESKITO utiliza ingredientes naturales, elaboración artesanal y una presentación práctica para que disfrutes tu sabor favorito donde quieras."
   },
   "benefits": [
     {
@@ -91,7 +91,7 @@
   ],
   "flavors": {
     "eyebrow": "Elige tu momento",
-    "title": "Ocho sabores.",
+    "title": "Mas de 15 Sabores.",
     "highlight": "Muchas formas de alegrarte.",
     "description": "Desde los cremosos de siempre hasta los frutales más refrescantes. ¿Cuál vas a probar primero?"
   },
@@ -162,7 +162,16 @@
     "highlight": "cada vez más cerca de ti.",
     "description": "Conoce los establecimientos que forman parte del programa de Puntos Aliados FRESKITO."
   },
-  "stores": [],
+  "stores": [
+    {
+      "name": "Repostería Y Cafetería La Canela",
+      "channel": "Reposteria",
+      "address": "Av. Hermanos Trejo 48, Higüey 23000",
+      "phone": "(809) 746-0241",
+      "whatsapp": "",
+      "mapUrl": "https://share.google/VpEhcmnnshtaIO9Ch"
+    }
+  ],
   "orders": {
     "title": "Pide tu FRESKITO",
     "description": "Haz tu pedido o consulta disponibilidad directamente por WhatsApp.",
