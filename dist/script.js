@@ -68,8 +68,8 @@ function configureFlavorCatalog(content){
     dialogDescription.textContent=item.description||`${item.subtitle||'Un sabor preparado para disfrutar.'} Elaborado artesanalmente con ingredientes naturales y la frescura característica de FRESKITO.`;
     dialogImage.src=item.image;
     dialogImage.alt=`Helado FRESKITO sabor ${item.name}`;
-    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-focus',item.focus||'50% 50%');
-    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-zoom',String(item.zoom||1));
+    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-focus','50% 50%');
+    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-zoom','1');
     dialogOrder.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent(`Hola FRESKITO, quiero pedir el sabor ${item.name}.`)}`;
     if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
     document.body.classList.add('dialog-open');
@@ -81,7 +81,7 @@ function configureFlavorCatalog(content){
   }
   flavors.forEach((item,index)=>{
     const card=document.createElement('button');card.type='button';card.className='flavor-card flavor-catalog-card reveal visible';card.setAttribute('aria-label',`Ver detalles del sabor ${item.name}`);
-    const media=document.createElement('span');media.className='flavor-card-media';media.style.setProperty('--flavor-focus',item.focus||'50% 50%');media.style.setProperty('--flavor-zoom',String(item.zoom||1));
+    const media=document.createElement('span');media.className='flavor-card-media';media.style.setProperty('--flavor-focus','50% 50%');media.style.setProperty('--flavor-zoom','1');
     const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index<3?'eager':'lazy';media.appendChild(image);
     const body=document.createElement('span');body.className='flavor-card-body';
     const natural=document.createElement('small');natural.textContent='100 % natural';
