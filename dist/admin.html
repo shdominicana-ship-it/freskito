@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
   <meta name="robots" content="noindex,nofollow">
   <title>Administración | FRESKITO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
-  <link rel="stylesheet" href="admin-carousel.css?v=20261117-6">
+  <link rel="stylesheet" href="admin-carousel.css?v=20261117-8">
 </head>
 <body>
   <header class="admin-header">
@@ -60,7 +63,7 @@
           <label>Texto destacado<input data-path="flavors.highlight"></label><label>Descripción<textarea data-path="flavors.description" rows="3"></textarea></label>
         </fieldset>
 
-        <fieldset id="temporada"><legend>Sabores de temporada</legend><p>Publica uno o varios sabores temporales y cambia sus imágenes cuando sea necesario.</p><div id="seasonal-admin-list"></div><button type="button" class="secondary" id="add-seasonal">+ Agregar sabor de temporada</button></fieldset>
+        <fieldset id="temporada"><legend>Productos de temporada</legend><div class="seasonal-module-note"><b>Crea campañas temporales sin límite.</b><span>Cada producto puede tener su propia fotografía, nombre, descripción y distintivo.</span></div><div class="grid two"><label>Título de la sección<input data-path="seasonalSection.title"></label><label>Texto destacado<input data-path="seasonalSection.highlight"></label></div><label>Descripción de la sección<textarea data-path="seasonalSection.description" rows="2"></textarea></label><div class="divider"></div><div id="seasonal-admin-list"></div><button type="button" class="primary" id="add-seasonal">+ Crear producto de temporada</button></fieldset>
 
         <fieldset id="ventas"><legend>Ventas y Puntos Aliados</legend>
           <div class="grid two"><label>Título de ventas<input data-path="sales.title"></label><label>Texto destacado<input data-path="sales.highlight"></label></div>
@@ -98,6 +101,6 @@
     </section>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="admin.js?v=20261117-7"></script>
+  <script src="admin.js?v=20261117-8"></script>
 </body>
 </html>

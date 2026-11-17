@@ -31,7 +31,7 @@ async function connect(event){
 }
 
 function buildEditor(){
-  const sections=[['portada','Portada'],['marca','Marca'],['producto','Producto'],['sabores','Sabores'],['temporada','Temporada'],['ventas','Ventas'],['puntos','Puntos de venta'],['contacto','Contacto'],['redes','Redes sociales'],['avanzado','Avanzado']];
+  const sections=[['portada','Portada'],['marca','Marca'],['producto','Producto'],['sabores','Sabores'],['temporada','Productos de temporada'],['ventas','Ventas'],['puntos','Puntos de venta'],['contacto','Contacto'],['redes','Redes sociales'],['avanzado','Avanzado']];
   $('#section-nav').innerHTML=sections.map(([id,label])=>`<a href="#${id}">${label}</a>`).join('');
   $('#benefit-fields').innerHTML=content.benefits.map((benefit,index)=>`<div class="repeat-card"><h3>Beneficio ${index+1}</h3><label>Título<input data-path="benefits.${index}.title"></label><label>Descripción<textarea rows="4" data-path="benefits.${index}.text"></textarea></label></div>`).join('');
   renderSlideEditors();renderSeasonalEditors();renderStoreEditors();bindContentFields();
