@@ -98,6 +98,14 @@
       "image": "assets/sabor-9-1794898860735.png",
       "focus": "50% 50%",
       "zoom": 1
+    },
+    {
+      "name": "Tamarindo",
+      "subtitle": "¡Un toque ácido, una dulzura irresistible!",
+      "description": "Descubre el auténtico sabor del tamarindo en un helado artesanal lleno de frescura y personalidad. Su deliciosa combinación de notas dulces y ligeramente ácidas despierta tus sentidos y te transporta a los sabores tradicionales del Caribe.\n\n¡Un clásico tropical que refresca y conquista desde el primer bocado!",
+      "image": "assets/sabor-10-1794959000437.png",
+      "focus": "50% 50%",
+      "zoom": 1
     }
   ],
   "product": {
