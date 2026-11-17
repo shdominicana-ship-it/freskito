@@ -1,0 +1,67 @@
+{
+  "branding": {"logo": "assets/logo-freskito-oficial.svg"},
+  "nav": {"product": "El producto", "flavors": "Sabores", "sales": "Dónde comprar", "contact": "Contáctanos"},
+  "actions": {"discover": "Descubre los sabores", "find": "Encuentra tu FRESKITO", "askStore": "Preguntar por un punto de venta", "partner": "Quiero ser Punto Aliado", "whatsapp": "Escribir por WhatsApp", "call": "Llamar ahora"},
+  "hero": {
+    "eyebrow": "Helados artesanales",
+    "title": "La frescura que",
+    "highlight": "te alegra.",
+    "description": "Sabores clásicos y gourmet en una presentación individual, refrescante y lista para disfrutar donde quieras.",
+    "sealTop": "100 %",
+    "sealBottom": "NATURAL",
+    "image": "assets/productos-freskito.jpg"
+  },
+  "product": {
+    "eyebrow": "Naturalmente delicioso",
+    "title": "Un favorito de siempre,",
+    "highlight": "hecho para disfrutar.",
+    "description": "FRESKITO combina el gusto por los helados artesanales con sabores reconocibles y una presentación práctica e individual."
+  },
+  "benefits": [
+    {"title": "100 % natural", "text": "Una propuesta artesanal que pone lo natural en el centro de cada momento refrescante."},
+    {"title": "Sabores para elegir", "text": "Una selección de sabores clásicos y gourmet para que siempre encuentres tu favorito."},
+    {"title": "Fácil de disfrutar", "text": "Presentación individual, reconocible y perfecta para llevar o disfrutar al instante."}
+  ],
+  "flavors": {
+    "eyebrow": "Elige tu momento",
+    "title": "Ocho sabores.",
+    "highlight": "Muchas formas de alegrarte.",
+    "description": "Desde los cremosos de siempre hasta los frutales más refrescantes. ¿Cuál vas a probar primero?"
+  },
+  "flavorItems": [
+    {"emoji":"🍮","label":"Cremoso","name":"Dulce de leche"},{"emoji":"🍪","label":"Clásico","name":"Galletas y crema"},{"emoji":"🍫","label":"Intenso","name":"Chocolate y avellanas"},{"emoji":"🍓","label":"Frutal","name":"Fresa"},{"emoji":"🥥","label":"Tropical","name":"Coco"},{"emoji":"🥭","label":"Tropical","name":"Mango"},{"emoji":"☀️","label":"Refrescante","name":"Chinola"},{"emoji":"🌿","label":"Especial","name":"Guanábana"}
+  ],
+  "sales": {
+    "eyebrow": "Cerca de ti",
+    "title": "Tu próximo FRESKITO",
+    "highlight": "está más cerca.",
+    "description": "Encuéntralo en colmados, minimarkets, reposterías y cafeterías aliadas. Busca el afiche de FRESKITO cerca de la caja o el congelador.",
+    "price": "RD$60",
+    "priceLabel": "Precio sugerido",
+    "priceUnit": "por unidad"
+  },
+  "locations": [{"title":"Colmados y minimarkets","text":"Un antojo rápido para llevar, visible cerca del congelador y de la caja."},{"title":"Reposterías y cafeterías","text":"El complemento frío ideal para la oferta dulce y las compras por impulso."}],
+  "partners": {
+    "eyebrow": "Para negocios",
+    "title": "Conviértete en un",
+    "highlight": "Punto Aliado FRESKITO.",
+    "description": "Incorpora una selección de sabores clásicos y gourmet a tu negocio con precios especiales, descuentos por volumen, material publicitario y coordinación de reposiciones."
+  },
+  "partnerBenefits": ["Incorporación gratuita","Precios comerciales","Descuentos por volumen","Material promocional","Apoyo y reposición"],
+  "contact": {
+    "eyebrow": "Hablemos",
+    "title": "¿Listo para probar",
+    "highlight": "la frescura?",
+    "description": "Ventas, puntos de venta y alianzas comerciales",
+    "displayPhone": "829 758 4030",
+    "whatsapp": "18297584030",
+    "phone": "+18297584030"
+  },
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "tiktok": "",
+    "youtube": ""
+  },
+  "footer": {"tagline": "La frescura que te alegra."}
+}

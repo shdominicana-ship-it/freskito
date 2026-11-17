@@ -17,14 +17,14 @@
   <header class="site-header" id="inicio">
     <nav class="nav shell" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="FRESKITO, inicio">
-        <img src="assets/logo-freskito.svg" alt="FRESKITO Helados Artesanales" width="220" height="92">
+        <img data-image="branding.logo" src="assets/logo-freskito-oficial.svg" alt="FRESKITO Helados Artesanales" width="220" height="92">
       </a>
       <button class="menu-button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span><span></span></button>
       <div class="nav-links" id="nav-links">
-        <a href="#producto">El producto</a>
-        <a href="#sabores">Sabores</a>
-        <a href="#donde-comprar">Dónde comprar</a>
-        <a class="nav-cta" href="#contacto">Contáctanos</a>
+        <a href="#producto" data-content="nav.product">El producto</a>
+        <a href="#sabores" data-content="nav.flavors">Sabores</a>
+        <a href="#donde-comprar" data-content="nav.sales">Dónde comprar</a>
+        <a class="nav-cta" href="#contacto" data-content="nav.contact">Contáctanos</a>
       </div>
     </nav>
   </header>
@@ -34,20 +34,20 @@
       <div class="sunburst" aria-hidden="true"></div>
       <div class="shell hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span></span> Helados artesanales</p>
-          <h1>La frescura que<br><em>te alegra.</em></h1>
-          <p class="hero-lead">Sabores clásicos y gourmet en una presentación individual, refrescante y lista para disfrutar donde quieras.</p>
+          <p class="eyebrow"><span></span> <span data-content="hero.eyebrow">Helados artesanales</span></p>
+          <h1><span data-content="hero.title">La frescura que</span><br><em data-content="hero.highlight">te alegra.</em></h1>
+          <p class="hero-lead" data-content="hero.description">Sabores clásicos y gourmet en una presentación individual, refrescante y lista para disfrutar donde quieras.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#sabores">Descubre los sabores <span aria-hidden="true">→</span></a>
-            <a class="button button-light" href="#donde-comprar">Encuentra tu FRESKITO</a>
+            <a class="button button-primary" href="#sabores"><span data-content="actions.discover">Descubre los sabores</span> <span aria-hidden="true">→</span></a>
+            <a class="button button-light" href="#donde-comprar" data-content="actions.find">Encuentra tu FRESKITO</a>
           </div>
           <div class="natural-seal" aria-label="Producto 100 por ciento natural">
-            <strong>100 %</strong><span>NATURAL</span>
+            <strong data-content="hero.sealTop">100 %</strong><span data-content="hero.sealBottom">NATURAL</span>
           </div>
         </div>
         <div class="hero-visual reveal">
           <div class="product-frame">
-            <img src="assets/productos-freskito.jpg" alt="Variedad de helados artesanales FRESKITO: dulce de leche, galletas y crema, chocolate y avellanas, fresa y coco">
+            <img data-image="hero.image" src="assets/productos-freskito.jpg" alt="Variedad de helados artesanales FRESKITO">
           </div>
           <div class="flavor-note note-one">Dulce de leche</div>
           <div class="flavor-note note-two">Fresa</div>
@@ -59,14 +59,14 @@
     <section class="promise section" id="producto">
       <div class="shell">
         <div class="section-heading centered reveal">
-          <p class="eyebrow dark"><span></span> Naturalmente delicioso</p>
-          <h2>Un favorito de siempre,<br><em>hecho para disfrutar.</em></h2>
-          <p>FRESKITO combina el gusto por los helados artesanales con sabores reconocibles y una presentación práctica e individual.</p>
+          <p class="eyebrow dark"><span></span> <span data-content="product.eyebrow">Naturalmente delicioso</span></p>
+          <h2><span data-content="product.title">Un favorito de siempre,</span><br><em data-content="product.highlight">hecho para disfrutar.</em></h2>
+          <p data-content="product.description">FRESKITO combina el gusto por los helados artesanales con sabores reconocibles y una presentación práctica e individual.</p>
         </div>
         <div class="benefits">
-          <article class="benefit reveal"><span class="benefit-icon">☀</span><h3>100 % natural</h3><p>Una propuesta artesanal que pone lo natural en el centro de cada momento refrescante.</p></article>
-          <article class="benefit reveal"><span class="benefit-icon">✦</span><h3>Sabores para elegir</h3><p>Una selección de sabores clásicos y gourmet para que siempre encuentres tu favorito.</p></article>
-          <article class="benefit reveal"><span class="benefit-icon">❄</span><h3>Fácil de disfrutar</h3><p>Presentación individual, reconocible y perfecta para llevar o disfrutar al instante.</p></article>
+          <article class="benefit reveal"><span class="benefit-icon">☀</span><h3 data-content="benefits.0.title">100 % natural</h3><p data-content="benefits.0.text">Una propuesta artesanal que pone lo natural en el centro de cada momento refrescante.</p></article>
+          <article class="benefit reveal"><span class="benefit-icon">✦</span><h3 data-content="benefits.1.title">Sabores para elegir</h3><p data-content="benefits.1.text">Una selección de sabores clásicos y gourmet para que siempre encuentres tu favorito.</p></article>
+          <article class="benefit reveal"><span class="benefit-icon">❄</span><h3 data-content="benefits.2.title">Fácil de disfrutar</h3><p data-content="benefits.2.text">Presentación individual, reconocible y perfecta para llevar o disfrutar al instante.</p></article>
         </div>
       </div>
     </section>
@@ -74,18 +74,18 @@
     <section class="flavors section" id="sabores">
       <div class="shell">
         <div class="section-heading split reveal">
-          <div><p class="eyebrow"><span></span> Elige tu momento</p><h2>Ocho sabores.<br><em>Muchas formas de alegrarte.</em></h2></div>
-          <p>Desde los cremosos de siempre hasta los frutales más refrescantes. ¿Cuál vas a probar primero?</p>
+          <div><p class="eyebrow"><span></span> <span data-content="flavors.eyebrow">Elige tu momento</span></p><h2><span data-content="flavors.title">Ocho sabores.</span><br><em data-content="flavors.highlight">Muchas formas de alegrarte.</em></h2></div>
+          <p data-content="flavors.description">Desde los cremosos de siempre hasta los frutales más refrescantes. ¿Cuál vas a probar primero?</p>
         </div>
         <div class="flavor-grid">
-          <article class="flavor-card caramel reveal"><span class="flavor-emoji">🍮</span><div><small>Cremoso</small><h3>Dulce de leche</h3></div></article>
-          <article class="flavor-card cookies reveal"><span class="flavor-emoji">🍪</span><div><small>Clásico</small><h3>Galletas y crema</h3></div></article>
-          <article class="flavor-card chocolate reveal"><span class="flavor-emoji">🍫</span><div><small>Intenso</small><h3>Chocolate y avellanas</h3></div></article>
-          <article class="flavor-card strawberry reveal"><span class="flavor-emoji">🍓</span><div><small>Frutal</small><h3>Fresa</h3></div></article>
-          <article class="flavor-card coconut reveal"><span class="flavor-emoji">🥥</span><div><small>Tropical</small><h3>Coco</h3></div></article>
-          <article class="flavor-card mango reveal"><span class="flavor-emoji">🥭</span><div><small>Tropical</small><h3>Mango</h3></div></article>
-          <article class="flavor-card passion reveal"><span class="flavor-emoji">☀️</span><div><small>Refrescante</small><h3>Chinola</h3></div></article>
-          <article class="flavor-card soursop reveal"><span class="flavor-emoji">🌿</span><div><small>Especial</small><h3>Guanábana</h3></div></article>
+          <article class="flavor-card caramel reveal"><span class="flavor-emoji" data-content="flavorItems.0.emoji">🍮</span><div><small data-content="flavorItems.0.label">Cremoso</small><h3 data-content="flavorItems.0.name">Dulce de leche</h3></div></article>
+          <article class="flavor-card cookies reveal"><span class="flavor-emoji" data-content="flavorItems.1.emoji">🍪</span><div><small data-content="flavorItems.1.label">Clásico</small><h3 data-content="flavorItems.1.name">Galletas y crema</h3></div></article>
+          <article class="flavor-card chocolate reveal"><span class="flavor-emoji" data-content="flavorItems.2.emoji">🍫</span><div><small data-content="flavorItems.2.label">Intenso</small><h3 data-content="flavorItems.2.name">Chocolate y avellanas</h3></div></article>
+          <article class="flavor-card strawberry reveal"><span class="flavor-emoji" data-content="flavorItems.3.emoji">🍓</span><div><small data-content="flavorItems.3.label">Frutal</small><h3 data-content="flavorItems.3.name">Fresa</h3></div></article>
+          <article class="flavor-card coconut reveal"><span class="flavor-emoji" data-content="flavorItems.4.emoji">🥥</span><div><small data-content="flavorItems.4.label">Tropical</small><h3 data-content="flavorItems.4.name">Coco</h3></div></article>
+          <article class="flavor-card mango reveal"><span class="flavor-emoji" data-content="flavorItems.5.emoji">🥭</span><div><small data-content="flavorItems.5.label">Tropical</small><h3 data-content="flavorItems.5.name">Mango</h3></div></article>
+          <article class="flavor-card passion reveal"><span class="flavor-emoji" data-content="flavorItems.6.emoji">☀️</span><div><small data-content="flavorItems.6.label">Refrescante</small><h3 data-content="flavorItems.6.name">Chinola</h3></div></article>
+          <article class="flavor-card soursop reveal"><span class="flavor-emoji" data-content="flavorItems.7.emoji">🌿</span><div><small data-content="flavorItems.7.label">Especial</small><h3 data-content="flavorItems.7.name">Guanábana</h3></div></article>
         </div>
       </div>
     </section>
@@ -93,15 +93,15 @@
     <section class="buy section" id="donde-comprar">
       <div class="shell buy-grid">
         <div class="buy-copy reveal">
-          <p class="eyebrow dark"><span></span> Cerca de ti</p>
-          <h2>Tu próximo FRESKITO<br><em>está más cerca.</em></h2>
-          <p>Encuéntralo en colmados, minimarkets, reposterías y cafeterías aliadas. Busca el afiche de FRESKITO cerca de la caja o el congelador.</p>
-          <div class="price-pill"><small>Precio sugerido</small><strong>RD$60</strong><span>por unidad</span></div>
-          <a class="text-link" href="https://wa.me/18297584030?text=Hola%20FRESKITO%2C%20%C2%BFd%C3%B3nde%20puedo%20comprar%20sus%20helados%3F" target="_blank" rel="noopener">Preguntar por un punto de venta <span>→</span></a>
+          <p class="eyebrow dark"><span></span> <span data-content="sales.eyebrow">Cerca de ti</span></p>
+          <h2><span data-content="sales.title">Tu próximo FRESKITO</span><br><em data-content="sales.highlight">está más cerca.</em></h2>
+          <p data-content="sales.description">Encuéntralo en colmados, minimarkets, reposterías y cafeterías aliadas. Busca el afiche de FRESKITO cerca de la caja o el congelador.</p>
+          <div class="price-pill"><small data-content="sales.priceLabel">Precio sugerido</small><strong data-content="sales.price">RD$60</strong><span data-content="sales.priceUnit">por unidad</span></div>
+          <a class="text-link" href="https://wa.me/18297584030?text=Hola%20FRESKITO%2C%20%C2%BFd%C3%B3nde%20puedo%20comprar%20sus%20helados%3F" target="_blank" rel="noopener"><span data-content="actions.askStore">Preguntar por un punto de venta</span> <span>→</span></a>
         </div>
         <div class="locations reveal">
-          <article><span>01</span><div><h3>Colmados y minimarkets</h3><p>Un antojo rápido para llevar, visible cerca del congelador y de la caja.</p></div></article>
-          <article><span>02</span><div><h3>Reposterías y cafeterías</h3><p>El complemento frío ideal para la oferta dulce y las compras por impulso.</p></div></article>
+          <article><span>01</span><div><h3 data-content="locations.0.title">Colmados y minimarkets</h3><p data-content="locations.0.text">Un antojo rápido para llevar, visible cerca del congelador y de la caja.</p></div></article>
+          <article><span>02</span><div><h3 data-content="locations.1.title">Reposterías y cafeterías</h3><p data-content="locations.1.text">El complemento frío ideal para la oferta dulce y las compras por impulso.</p></div></article>
         </div>
       </div>
     </section>
@@ -109,31 +109,30 @@
     <section class="partners section" id="aliados">
       <div class="shell partner-card reveal">
         <div>
-          <p class="eyebrow"><span></span> Para negocios</p>
-          <h2>Conviértete en un<br><em>Punto Aliado FRESKITO.</em></h2>
-          <p>Incorpora una selección de sabores clásicos y gourmet a tu negocio con precios especiales, descuentos por volumen, material publicitario y coordinación de reposiciones.</p>
-          <a class="button button-primary" href="https://wa.me/18297584030?text=Hola%20Leandro%2C%20quiero%20informaci%C3%B3n%20para%20convertirme%20en%20Punto%20Aliado%20FRESKITO." target="_blank" rel="noopener">Quiero ser Punto Aliado <span>→</span></a>
+          <p class="eyebrow"><span></span> <span data-content="partners.eyebrow">Para negocios</span></p>
+          <h2><span data-content="partners.title">Conviértete en un</span><br><em data-content="partners.highlight">Punto Aliado FRESKITO.</em></h2>
+          <p data-content="partners.description">Incorpora una selección de sabores clásicos y gourmet a tu negocio con precios especiales, descuentos por volumen, material publicitario y coordinación de reposiciones.</p>
+          <a class="button button-primary" href="https://wa.me/18297584030?text=Hola%20FRESKITO%2C%20quiero%20informaci%C3%B3n%20para%20convertirme%20en%20Punto%20Aliado%20FRESKITO." target="_blank" rel="noopener"><span data-content="actions.partner">Quiero ser Punto Aliado</span> <span>→</span></a>
         </div>
         <ul>
-          <li><b>✓</b> Incorporación gratuita</li>
-          <li><b>✓</b> Precios comerciales</li>
-          <li><b>✓</b> Descuentos por volumen</li>
-          <li><b>✓</b> Material promocional</li>
-          <li><b>✓</b> Apoyo y reposición</li>
+          <li><b>✓</b> <span data-content="partnerBenefits.0">Incorporación gratuita</span></li>
+          <li><b>✓</b> <span data-content="partnerBenefits.1">Precios comerciales</span></li>
+          <li><b>✓</b> <span data-content="partnerBenefits.2">Descuentos por volumen</span></li>
+          <li><b>✓</b> <span data-content="partnerBenefits.3">Material promocional</span></li>
+          <li><b>✓</b> <span data-content="partnerBenefits.4">Apoyo y reposición</span></li>
         </ul>
       </div>
     </section>
 
     <section class="contact section" id="contacto">
       <div class="shell contact-grid">
-        <div class="reveal"><p class="eyebrow dark"><span></span> Hablemos</p><h2>¿Listo para probar<br><em>la frescura?</em></h2></div>
+        <div class="reveal"><p class="eyebrow dark"><span></span> <span data-content="contact.eyebrow">Hablemos</span></p><h2><span data-content="contact.title">¿Listo para probar</span><br><em data-content="contact.highlight">la frescura?</em></h2></div>
         <div class="contact-card reveal">
-          <p>Ventas, puntos de venta y alianzas comerciales</p>
-          <h3>Leandro Oliver</h3>
-          <a href="tel:+18297584030">829 758 4030</a>
+          <p data-content="contact.description">Ventas, puntos de venta y alianzas comerciales</p>
+          <a data-phone-link href="tel:+18297584030" data-content="contact.displayPhone">829 758 4030</a>
           <div class="contact-actions">
-            <a class="button button-whatsapp" href="https://wa.me/18297584030?text=Hola%20FRESKITO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener">Escribir por WhatsApp</a>
-            <a class="button button-outline" href="tel:+18297584030">Llamar ahora</a>
+            <a class="button button-whatsapp" href="https://wa.me/18297584030?text=Hola%20FRESKITO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" data-content="actions.whatsapp">Escribir por WhatsApp</a>
+            <a class="button button-outline" href="tel:+18297584030" data-content="actions.call">Llamar ahora</a>
           </div>
         </div>
       </div>
@@ -142,8 +141,9 @@
 
   <footer>
     <div class="shell footer-grid">
-      <img src="assets/logo-freskito.svg" alt="FRESKITO Helados Artesanales" width="190" height="80">
-      <p>Helados artesanales · 100 % natural<br><span>La frescura que te alegra.</span></p>
+      <img data-image="branding.logo" src="assets/logo-freskito-oficial.svg" alt="FRESKITO Helados Artesanales" width="190" height="80">
+      <p>Helados artesanales · 100 % natural<br><span data-content="footer.tagline">La frescura que te alegra.</span></p>
+      <div class="social-links" aria-label="Redes sociales"></div>
       <a href="#inicio">Volver arriba ↑</a>
     </div>
   </footer>

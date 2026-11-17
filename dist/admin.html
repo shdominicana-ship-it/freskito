@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Administración | FRESKITO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="admin-header">
+    <div><span class="brand-dot"></span><strong>FRESKITO</strong><small>Panel de administración</small></div>
+    <a href="./" target="_blank" rel="noopener">Ver página ↗</a>
+  </header>
+
+  <main>
+    <section class="auth-card" id="auth-card">
+      <div><p class="kicker">ACCESO SEGURO</p><h1>Conecta tu repositorio</h1><p>Usa un token de GitHub con acceso únicamente al repositorio <b>freskito</b>. El token permanece en la memoria de esta pestaña y no se guarda en la web.</p></div>
+      <form id="auth-form">
+        <label>Token de GitHub<input id="token" type="password" autocomplete="off" placeholder="github_pat_…" required></label>
+        <button class="primary" type="submit">Conectar y cargar contenido</button>
+        <p class="help">Permiso necesario: <b>Contents · Read and write</b>. <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Crear token de acceso ↗</a></p>
+      </form>
+    </section>
+
+    <section class="editor hidden" id="editor">
+      <aside>
+        <p class="kicker">CONTENIDO</p>
+        <nav id="section-nav"></nav>
+        <div class="status-box"><span id="connection-dot"></span><div><b>GitHub conectado</b><small id="connection-user"></small></div></div>
+      </aside>
+
+      <form id="content-form">
+        <div class="editor-top"><div><p class="kicker">EDITOR DEL SITIO</p><h1>Contenido de FRESKITO</h1></div><button class="primary" type="submit">Publicar cambios</button></div>
+
+        <fieldset id="portada"><legend>Portada</legend><p>Edita el mensaje principal y la imagen del producto.</p>
+          <div class="grid two"><label>Etiqueta<input data-path="hero.eyebrow"></label><label>Sello superior<input data-path="hero.sealTop"></label></div>
+          <div class="grid two"><label>Título<input data-path="hero.title"></label><label>Texto destacado<input data-path="hero.highlight"></label></div>
+          <label>Descripción<textarea data-path="hero.description" rows="3"></textarea></label>
+          <div class="asset-grid"><label class="upload">Imagen principal<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="hero.image"><span>Seleccionar imagen</span><small>JPG, PNG o WebP · máximo 4 MB</small></label><img id="preview-hero" alt="Vista previa de la imagen principal"></div>
+        </fieldset>
+
+        <fieldset id="marca"><legend>Marca</legend><p>Cambia el logotipo utilizado en la cabecera y el pie de página.</p>
+          <div class="asset-grid"><label class="upload">Logotipo<input type="file" accept="image/png,image/jpeg,image/webp,image/svg+xml" data-upload="branding.logo"><span>Seleccionar logotipo</span><small>SVG, PNG, JPG o WebP · máximo 2 MB</small></label><img id="preview-logo" alt="Vista previa del logotipo"></div>
+        </fieldset>
+
+        <fieldset id="producto"><legend>Producto y beneficios</legend>
+          <div class="grid two"><label>Etiqueta<input data-path="product.eyebrow"></label><label>Título<input data-path="product.title"></label></div>
+          <label>Texto destacado<input data-path="product.highlight"></label><label>Descripción<textarea data-path="product.description" rows="3"></textarea></label>
+          <div id="benefit-fields" class="repeat-grid"></div>
+        </fieldset>
+
+        <fieldset id="sabores"><legend>Sección de sabores</legend>
+          <div class="grid two"><label>Etiqueta<input data-path="flavors.eyebrow"></label><label>Título<input data-path="flavors.title"></label></div>
+          <label>Texto destacado<input data-path="flavors.highlight"></label><label>Descripción<textarea data-path="flavors.description" rows="3"></textarea></label>
+        </fieldset>
+
+        <fieldset id="ventas"><legend>Ventas y Puntos Aliados</legend>
+          <div class="grid two"><label>Título de ventas<input data-path="sales.title"></label><label>Texto destacado<input data-path="sales.highlight"></label></div>
+          <label>Descripción de ventas<textarea data-path="sales.description" rows="3"></textarea></label><label>Precio mostrado<input data-path="sales.price"></label>
+          <div class="divider"></div>
+          <div class="grid two"><label>Título de aliados<input data-path="partners.title"></label><label>Texto destacado<input data-path="partners.highlight"></label></div>
+          <label>Descripción de aliados<textarea data-path="partners.description" rows="3"></textarea></label>
+        </fieldset>
+
+        <fieldset id="contacto"><legend>Contacto y WhatsApp</legend><p>Escribe los números con código de país. Ejemplo: 18297584030.</p>
+          <div class="grid two"><label>Número mostrado<input data-path="contact.displayPhone"></label><label>Número para llamadas<input data-path="contact.phone"></label></div>
+          <label>Número de WhatsApp<input data-path="contact.whatsapp" inputmode="numeric"></label>
+          <div class="grid two"><label>Título<input data-path="contact.title"></label><label>Texto destacado<input data-path="contact.highlight"></label></div>
+        </fieldset>
+
+        <fieldset id="redes"><legend>Redes sociales</legend><p>Déjalas vacías para ocultarlas de la página.</p>
+          <label>Instagram<input data-path="social.instagram" type="url" placeholder="https://instagram.com/…"></label>
+          <label>Facebook<input data-path="social.facebook" type="url" placeholder="https://facebook.com/…"></label>
+          <label>TikTok<input data-path="social.tiktok" type="url" placeholder="https://tiktok.com/@…"></label>
+          <label>YouTube<input data-path="social.youtube" type="url" placeholder="https://youtube.com/@…"></label>
+          <label>Frase del pie de página<input data-path="footer.tagline"></label>
+        </fieldset>
+
+        <fieldset id="avanzado"><legend>Edición avanzada</legend><p>Edita la configuración completa en formato JSON. Úsalo solo si necesitas cambiar un campo que no aparece arriba.</p><textarea id="json-editor" class="code" rows="18" spellcheck="false"></textarea><button type="button" class="secondary" id="apply-json">Aplicar JSON al formulario</button></fieldset>
+        <div class="publish-bar"><span id="save-state">Sin cambios pendientes</span><button class="primary" type="submit">Publicar cambios</button></div>
+      </form>
+    </section>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="admin.js"></script>
+</body>
+</html>
