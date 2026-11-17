@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="premium.css?v=20261117-2">
+  <link rel="stylesheet" href="premium.css?v=20261117-3">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -48,10 +48,13 @@
         </div>
         <div class="hero-visual reveal">
           <div class="product-frame">
-            <img data-image="hero.image" src="assets/productos-freskito.jpg" alt="Variedad de helados artesanales FRESKITO">
+            <div class="hero-carousel" aria-roledescription="carrusel" aria-label="Sabores FRESKITO">
+              <div class="carousel-track" aria-live="polite"></div>
+              <button class="carousel-arrow carousel-prev" type="button" aria-label="Sabor anterior">‹</button>
+              <button class="carousel-arrow carousel-next" type="button" aria-label="Siguiente sabor">›</button>
+              <div class="carousel-dots" role="tablist" aria-label="Seleccionar sabor"></div>
+            </div>
           </div>
-          <div class="flavor-note note-one">Dulce de leche</div>
-          <div class="flavor-note note-two">Fresa</div>
         </div>
       </div>
       <div class="hero-wave" aria-hidden="true"></div>
@@ -150,6 +153,6 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/18297584030?text=Hola%20FRESKITO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Contactar a FRESKITO por WhatsApp">✆</a>
-  <script src="script.js"></script>
+  <script src="script.js?v=20261117-3"></script>
 </body>
 </html>

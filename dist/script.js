@@ -22,6 +22,26 @@ function configureSocial(content){
   container.hidden=!container.children.length;
 }
 
+function configureCarousel(content){
+  const carousel=document.querySelector('.hero-carousel');
+  const track=carousel?.querySelector('.carousel-track');
+  const dots=carousel?.querySelector('.carousel-dots');
+  const slidesData=content.heroSlides?.length?content.heroSlides:[{name:'Todos los sabores',subtitle:'La frescura que te alegra',image:content.hero.image,focus:'50% 50%',zoom:1}];
+  if(!carousel||!track||!dots)return;
+  track.innerHTML='';dots.innerHTML='';let active=0;let timer;
+  const slides=slidesData.map((item,index)=>{
+    const slide=document.createElement('article');slide.className=`carousel-slide${index===0?' active':''}`;slide.setAttribute('aria-label',`${index+1} de ${slidesData.length}: ${item.name}`);slide.setAttribute('aria-hidden',String(index!==0));slide.style.setProperty('--slide-focus',item.focus||'50% 50%');slide.style.setProperty('--slide-zoom',String(item.zoom||1));
+    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index===0?'eager':'lazy';
+    const caption=document.createElement('div');caption.className='carousel-caption';const small=document.createElement('small');small.textContent=item.subtitle||'Helado artesanal';const strong=document.createElement('strong');strong.textContent=item.name;caption.append(small,strong);slide.append(image,caption);track.appendChild(slide);
+    const dot=document.createElement('button');dot.type='button';dot.className=`carousel-dot${index===0?' active':''}`;dot.setAttribute('role','tab');dot.setAttribute('aria-label',`Mostrar ${item.name}`);dot.setAttribute('aria-selected',String(index===0));dot.addEventListener('click',()=>show(index,true));dots.appendChild(dot);return slide;
+  });
+  const dotButtons=[...dots.children];
+  function show(index,manual=false){active=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{const selected=i===active;slide.classList.toggle('active',selected);slide.setAttribute('aria-hidden',String(!selected));dotButtons[i].classList.toggle('active',selected);dotButtons[i].setAttribute('aria-selected',String(selected))});if(manual)restart()}
+  function restart(){clearInterval(timer);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>show(active+1),3600)}
+  carousel.querySelector('.carousel-prev').onclick=()=>show(active-1,true);carousel.querySelector('.carousel-next').onclick=()=>show(active+1,true);
+  carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',restart);carousel.addEventListener('focusin',()=>clearInterval(timer));carousel.addEventListener('focusout',restart);restart();
+}
+
 async function loadContent(){
   try{
     const response=await fetch(`content.json?v=${Date.now()}`);
@@ -29,7 +49,7 @@ async function loadContent(){
     const content=await response.json();
     document.querySelectorAll('[data-content]').forEach(element=>{const value=getPath(content,element.dataset.content);if(value!==undefined)element.textContent=value});
     document.querySelectorAll('[data-image]').forEach(image=>{const value=getPath(content,image.dataset.image);if(value)image.src=value});
-    configureContact(content);configureSocial(content);
+    configureContact(content);configureSocial(content);configureCarousel(content);
   }catch(error){console.warn(error)}
 }
 

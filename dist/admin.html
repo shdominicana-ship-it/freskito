@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="admin-carousel.css">
 </head>
 <body>
   <header class="admin-header">
@@ -41,6 +42,7 @@
           <div class="grid two"><label>Título<input data-path="hero.title"></label><label>Texto destacado<input data-path="hero.highlight"></label></div>
           <label>Descripción<textarea data-path="hero.description" rows="3"></textarea></label>
           <div class="asset-grid"><label class="upload">Imagen principal<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="hero.image"><span>Seleccionar imagen</span><small>JPG, PNG o WebP · máximo 4 MB</small></label><img id="preview-hero" alt="Vista previa de la imagen principal"></div>
+          <div class="divider"></div><h3>Imágenes del carrusel</h3><p>Sube una foto para cada sabor. La última diapositiva debe mostrar todos los sabores juntos.</p><div id="slide-fields" class="slide-admin-grid"></div>
         </fieldset>
 
         <fieldset id="marca"><legend>Marca</legend><p>Cambia el logotipo utilizado en la cabecera y el pie de página.</p>
@@ -86,6 +88,6 @@
     </section>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="admin.js"></script>
+  <script src="admin.js?v=20261117-3"></script>
 </body>
 </html>

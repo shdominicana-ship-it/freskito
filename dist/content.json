@@ -11,6 +11,14 @@
     "sealBottom": "NATURAL",
     "image": "assets/productos-freskito.jpg"
   },
+  "heroSlides": [
+    {"name":"Dulce de leche","subtitle":"Cremoso y envolvente","image":"assets/productos-freskito.jpg","focus":"17% 48%","zoom":2.15},
+    {"name":"Galletas y crema","subtitle":"El clásico que siempre alegra","image":"assets/productos-freskito.jpg","focus":"37% 48%","zoom":2.15},
+    {"name":"Chocolate y avellanas","subtitle":"Intenso y delicioso","image":"assets/productos-freskito.jpg","focus":"55% 48%","zoom":2.15},
+    {"name":"Fresa","subtitle":"Frutal y refrescante","image":"assets/productos-freskito.jpg","focus":"72% 48%","zoom":2.15},
+    {"name":"Coco","subtitle":"Sabor tropical","image":"assets/productos-freskito.jpg","focus":"88% 48%","zoom":2.15},
+    {"name":"Todos los sabores","subtitle":"¿Cuál vas a probar primero?","image":"assets/productos-freskito.jpg","focus":"50% 50%","zoom":1}
+  ],
   "product": {
     "eyebrow": "Naturalmente delicioso",
     "title": "El sabor de siempre,",

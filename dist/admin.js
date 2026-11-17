@@ -34,6 +34,7 @@ function buildEditor(){
   const sections=[['portada','Portada'],['marca','Marca'],['producto','Producto'],['sabores','Sabores'],['ventas','Ventas'],['contacto','Contacto'],['redes','Redes sociales'],['avanzado','Avanzado']];
   $('#section-nav').innerHTML=sections.map(([id,label])=>`<a href="#${id}">${label}</a>`).join('');
   $('#benefit-fields').innerHTML=content.benefits.map((benefit,index)=>`<div class="repeat-card"><h3>Beneficio ${index+1}</h3><label>Título<input data-path="benefits.${index}.title"></label><label>Descripción<textarea rows="4" data-path="benefits.${index}.text"></textarea></label></div>`).join('');
+  $('#slide-fields').innerHTML=(content.heroSlides||[]).map((slide,index)=>`<div class="slide-admin-card"><img id="preview-slide-${index}" src="${slide.image}" alt="Vista previa de ${slide.name}"><label>Nombre del sabor<input data-path="heroSlides.${index}.name"></label><label>Frase corta<input data-path="heroSlides.${index}.subtitle"></label><label class="upload">Cambiar fotografía<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="heroSlides.${index}.image" data-preview="preview-slide-${index}"><span>Seleccionar imagen</span><small>JPG, PNG o WebP · máximo 4 MB</small></label></div>`).join('');
   $$('[data-path]').forEach(field=>{field.value=getPath(content,field.dataset.path)??'';field.addEventListener('input',()=>{setPath(content,field.dataset.path,field.value);markDirty()})});
   $('#preview-hero').src=content.hero.image;$('#preview-logo').src=content.branding.logo;syncJson();
   $$('[data-upload]').forEach(input=>input.addEventListener('change',previewUpload));
@@ -44,8 +45,8 @@ function previewUpload(event){
   const max=event.target.dataset.upload==='branding.logo'?2:4;
   if(file.size>max*1024*1024){event.target.value='';toast(`La imagen supera el máximo de ${max} MB.`,true);return}
   pendingUploads.set(event.target.dataset.upload,file);
-  const preview=event.target.dataset.upload==='hero.image'?'#preview-hero':'#preview-logo';
-  $(preview).src=URL.createObjectURL(file);markDirty();
+  const previewId=event.target.dataset.preview||(event.target.dataset.upload==='hero.image'?'preview-hero':'preview-logo');
+  document.getElementById(previewId).src=URL.createObjectURL(file);markDirty();
 }
 
 function syncJson(){if($('#json-editor'))$('#json-editor').value=JSON.stringify(content,null,2)}
@@ -63,7 +64,7 @@ async function publish(event){
   try{
     for(const [slot,file] of pendingUploads){
       const ext=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'');
-      const name=slot==='hero.image'?'imagen-principal':'logo';const path=`dist/assets/${name}-${Date.now()}.${ext}`;
+      const name=slot==='hero.image'?'imagen-principal':slot==='branding.logo'?'logo':`sabor-${Number(slot.split('.')[1])+1}`;const path=`dist/assets/${name}-${Date.now()}.${ext}`;
       await putFile(path,await fileToBase64(file),`Actualizar ${name} de FRESKITO`);setPath(content,slot,path.replace('dist/',''));
     }
     const latest=await api(`/repos/${OWNER}/${REPO}/contents/${CONTENT_PATH}?ref=${BRANCH}`);if(latest.ok)contentSha=(await latest.json()).sha;
