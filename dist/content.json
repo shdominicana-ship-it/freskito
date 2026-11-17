@@ -81,6 +81,13 @@
       "image": "assets/sabor-8-1794898643208.png",
       "focus": "50% 50%",
       "zoom": 1
+    },
+    {
+      "name": "Ciruela",
+      "subtitle": "¡Dulzura frutal con personalidad!",
+      "image": "assets/sabor-9-1794898860735.png",
+      "focus": "50% 50%",
+      "zoom": 1
     }
   ],
   "product": {
