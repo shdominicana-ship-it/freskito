@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="premium.css?v=20261117-8">
+  <link rel="stylesheet" href="premium.css?v=20261117-9">
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
@@ -85,16 +85,7 @@
           <div><p class="eyebrow"><span></span> <span data-content="flavors.eyebrow">Elige tu momento</span></p><h2><span data-content="flavors.title">Ocho sabores.</span><br><em data-content="flavors.highlight">Muchas formas de alegrarte.</em></h2></div>
           <p data-content="flavors.description">Desde los cremosos de siempre hasta los frutales más refrescantes. ¿Cuál vas a probar primero?</p>
         </div>
-        <div class="flavor-grid">
-          <article class="flavor-card caramel reveal"><span class="flavor-emoji" data-content="flavorItems.0.emoji">🍮</span><div><small data-content="flavorItems.0.label">Cremoso</small><h3 data-content="flavorItems.0.name">Dulce de leche</h3></div></article>
-          <article class="flavor-card cookies reveal"><span class="flavor-emoji" data-content="flavorItems.1.emoji">🍪</span><div><small data-content="flavorItems.1.label">Clásico</small><h3 data-content="flavorItems.1.name">Galletas y crema</h3></div></article>
-          <article class="flavor-card chocolate reveal"><span class="flavor-emoji" data-content="flavorItems.2.emoji">🍫</span><div><small data-content="flavorItems.2.label">Intenso</small><h3 data-content="flavorItems.2.name">Chocolate y avellanas</h3></div></article>
-          <article class="flavor-card strawberry reveal"><span class="flavor-emoji" data-content="flavorItems.3.emoji">🍓</span><div><small data-content="flavorItems.3.label">Frutal</small><h3 data-content="flavorItems.3.name">Fresa</h3></div></article>
-          <article class="flavor-card coconut reveal"><span class="flavor-emoji" data-content="flavorItems.4.emoji">🥥</span><div><small data-content="flavorItems.4.label">Tropical</small><h3 data-content="flavorItems.4.name">Coco</h3></div></article>
-          <article class="flavor-card mango reveal"><span class="flavor-emoji" data-content="flavorItems.5.emoji">🥭</span><div><small data-content="flavorItems.5.label">Tropical</small><h3 data-content="flavorItems.5.name">Mango</h3></div></article>
-          <article class="flavor-card passion reveal"><span class="flavor-emoji" data-content="flavorItems.6.emoji">☀️</span><div><small data-content="flavorItems.6.label">Refrescante</small><h3 data-content="flavorItems.6.name">Chinola</h3></div></article>
-          <article class="flavor-card soursop reveal"><span class="flavor-emoji" data-content="flavorItems.7.emoji">🌿</span><div><small data-content="flavorItems.7.label">Especial</small><h3 data-content="flavorItems.7.name">Guanábana</h3></div></article>
-        </div>
+        <div class="flavor-grid flavor-catalog" id="flavor-catalog" aria-live="polite"></div>
       </div>
     </section>
 
@@ -172,6 +163,20 @@
     </section>
   </main>
 
+  <dialog class="flavor-dialog" id="flavor-dialog" aria-labelledby="flavor-dialog-title">
+    <div class="flavor-dialog-card">
+      <button class="flavor-dialog-close" type="button" aria-label="Cerrar información del sabor">×</button>
+      <div class="flavor-dialog-media"><img id="flavor-dialog-image" alt=""></div>
+      <div class="flavor-dialog-content">
+        <span class="flavor-dialog-badge">Helado artesanal · 100 % natural</span>
+        <h2 id="flavor-dialog-title"></h2>
+        <p class="flavor-dialog-subtitle" id="flavor-dialog-subtitle"></p>
+        <p class="flavor-dialog-description" id="flavor-dialog-description"></p>
+        <a class="button button-primary" id="flavor-dialog-order" href="https://wa.me/18297584030" target="_blank" rel="noopener">Pedir este sabor por WhatsApp <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </dialog>
+
   <footer>
     <div class="shell footer-grid">
       <img data-image="branding.logo" src="assets/logo-freskito-transparente.png" alt="FRESKITO Helados Artesanales" width="190" height="95">
@@ -182,6 +187,6 @@
   </footer>
 
   <a class="whatsapp-float" href="https://wa.me/18297584030?text=Hola%20FRESKITO%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank" rel="noopener" aria-label="Contactar a FRESKITO por WhatsApp">✆</a>
-  <script src="script.js?v=20261117-7"></script>
+  <script src="script.js?v=20261117-9"></script>
 </body>
 </html>

@@ -42,6 +42,60 @@ function configureCarousel(content){
   carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',restart);carousel.addEventListener('focusin',()=>clearInterval(timer));carousel.addEventListener('focusout',restart);restart();
 }
 
+function configureFlavorCatalog(content){
+  const grid=document.querySelector('#flavor-catalog');
+  const dialog=document.querySelector('#flavor-dialog');
+  if(!grid||!dialog)return;
+  const flavors=(content.heroSlides||[]).filter(item=>item?.name&&item?.image&&!item.isGroup);
+  const dialogImage=dialog.querySelector('#flavor-dialog-image');
+  const dialogTitle=dialog.querySelector('#flavor-dialog-title');
+  const dialogSubtitle=dialog.querySelector('#flavor-dialog-subtitle');
+  const dialogDescription=dialog.querySelector('#flavor-dialog-description');
+  const dialogOrder=dialog.querySelector('#flavor-dialog-order');
+  const orderNumber=String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'');
+  let previousFocus;
+
+  function closeDialog(){
+    if(dialog.open)dialog.close();
+    document.body.classList.remove('dialog-open');
+    previousFocus?.focus();
+  }
+
+  function openFlavor(item,trigger){
+    previousFocus=trigger;
+    dialogTitle.textContent=item.name;
+    dialogSubtitle.textContent=item.subtitle||'Helado artesanal FRESKITO';
+    dialogDescription.textContent=item.description||`${item.subtitle||'Un sabor preparado para disfrutar.'} Elaborado artesanalmente con ingredientes naturales y la frescura característica de FRESKITO.`;
+    dialogImage.src=item.image;
+    dialogImage.alt=`Helado FRESKITO sabor ${item.name}`;
+    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-focus',item.focus||'50% 50%');
+    dialog.querySelector('.flavor-dialog-media').style.setProperty('--flavor-zoom',String(item.zoom||1));
+    dialogOrder.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent(`Hola FRESKITO, quiero pedir el sabor ${item.name}.`)}`;
+    if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
+    document.body.classList.add('dialog-open');
+  }
+
+  grid.innerHTML='';
+  if(!flavors.length){
+    const empty=document.createElement('p');empty.className='flavor-catalog-empty';empty.textContent='Próximamente publicaremos nuestros sabores.';grid.appendChild(empty);return;
+  }
+  flavors.forEach((item,index)=>{
+    const card=document.createElement('button');card.type='button';card.className='flavor-card flavor-catalog-card reveal visible';card.setAttribute('aria-label',`Ver detalles del sabor ${item.name}`);
+    const media=document.createElement('span');media.className='flavor-card-media';media.style.setProperty('--flavor-focus',item.focus||'50% 50%');media.style.setProperty('--flavor-zoom',String(item.zoom||1));
+    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index<3?'eager':'lazy';media.appendChild(image);
+    const body=document.createElement('span');body.className='flavor-card-body';
+    const natural=document.createElement('small');natural.textContent='100 % natural';
+    const title=document.createElement('strong');title.textContent=item.name;
+    const subtitle=document.createElement('span');subtitle.className='flavor-card-subtitle';subtitle.textContent=item.subtitle||'Helado artesanal FRESKITO';
+    const action=document.createElement('span');action.className='flavor-card-action';action.textContent='Ver sabor →';
+    body.append(natural,title,subtitle,action);card.append(media,body);card.addEventListener('click',()=>openFlavor(item,card));grid.appendChild(card);
+  });
+
+  dialog.querySelector('.flavor-dialog-close').onclick=closeDialog;
+  dialog.addEventListener('close',()=>document.body.classList.remove('dialog-open'));
+  dialog.addEventListener('click',event=>{if(event.target===dialog)closeDialog()});
+}
+
 function configureStores(content){
   const grid=document.querySelector('#store-grid');if(!grid)return;grid.innerHTML='';
   const stores=content.stores||[];
@@ -79,7 +133,7 @@ async function loadContent(){
     const content=await response.json();
     document.querySelectorAll('[data-content]').forEach(element=>{const value=getPath(content,element.dataset.content);if(value!==undefined)element.textContent=value});
     document.querySelectorAll('[data-image]').forEach(image=>{const value=getPath(content,image.dataset.image);if(value)image.src=value});
-    configureContact(content);configureSocial(content);configureCarousel(content);configureStores(content);configureSeasonal(content);
+    configureContact(content);configureSocial(content);configureCarousel(content);configureFlavorCatalog(content);configureStores(content);configureSeasonal(content);
   }catch(error){console.warn(error)}
 }
 
