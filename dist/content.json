@@ -30,41 +30,41 @@
       "name": "Dulce de leche",
       "subtitle": "¡Cremoso, irresistible y delicioso!",
       "image": "assets/sabor-1-1794896107530.png",
-      "focus": "50% 50%",
-      "zoom": 1
+      "focus": "17% 48%",
+      "zoom": 2.15
     },
     {
       "name": "Galletas y crema",
       "subtitle": "¡Cremosidad con un toque crujiente!",
       "image": "assets/sabor-2-1794896510754.png",
-      "focus": "50% 50%",
-      "zoom": 1
+      "focus": "37% 48%",
+      "zoom": 2.15
     },
     {
-      "name": "Chocolate y avellanas",
-      "subtitle": "Intenso y delicioso",
-      "image": "assets/productos-freskito.jpg",
+      "name": "Fresa con Leche",
+      "subtitle": "¡Suavidad y frescura en cada bocado!",
+      "image": "assets/sabor-3-1794897563832.png",
       "focus": "55% 48%",
       "zoom": 2.15
     },
     {
-      "name": "Fresa",
-      "subtitle": "Frutal y refrescante",
-      "image": "assets/productos-freskito.jpg",
+      "name": "Cereza Fresa",
+      "subtitle": "¡Una explosión de sabor frutal!",
+      "image": "assets/sabor-4-1794897561099.png",
       "focus": "72% 48%",
       "zoom": 2.15
     },
     {
-      "name": "Coco",
-      "subtitle": "Sabor tropical",
-      "image": "assets/productos-freskito.jpg",
+      "name": "Chinola",
+      "subtitle": "¡Toda la intensidad del trópico!",
+      "image": "assets/sabor-5-1794897566237.png",
       "focus": "88% 48%",
       "zoom": 2.15
     },
     {
-      "name": "Todos los sabores",
-      "subtitle": "¿Cuál vas a probar primero?",
-      "image": "assets/productos-freskito.jpg",
+      "name": "Guanabana",
+      "subtitle": "¡Una delicia tropical irresistible!",
+      "image": "assets/sabor-6-1794897568335.png",
       "focus": "50% 50%",
       "zoom": 1
     }
