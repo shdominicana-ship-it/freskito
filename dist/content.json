@@ -1,21 +1,21 @@
 {
-  "branding": {"logo": "assets/logo-freskito-oficial.png"},
+  "branding": {"logo": "assets/logo-freskito-transparente.png"},
   "nav": {"product": "El producto", "flavors": "Sabores", "sales": "Dónde comprar", "contact": "Contáctanos"},
   "actions": {"discover": "Descubre los sabores", "find": "Encuentra tu FRESKITO", "askStore": "Preguntar por un punto de venta", "partner": "Quiero ser Punto Aliado", "whatsapp": "Escribir por WhatsApp", "call": "Llamar ahora"},
   "hero": {
-    "eyebrow": "Helados artesanales",
-    "title": "La frescura que",
-    "highlight": "te alegra.",
-    "description": "Sabores clásicos y gourmet en una presentación individual, refrescante y lista para disfrutar donde quieras.",
+    "eyebrow": "Helados artesanales · 100 % natural",
+    "title": "Sabor que refresca.",
+    "highlight": "Frescura que alegra.",
+    "description": "Una experiencia artesanal en cada bocado. Descubre sabores clásicos y tropicales, preparados para convertir cualquier momento en algo especial.",
     "sealTop": "100 %",
     "sealBottom": "NATURAL",
     "image": "assets/productos-freskito.jpg"
   },
   "product": {
     "eyebrow": "Naturalmente delicioso",
-    "title": "Un favorito de siempre,",
-    "highlight": "hecho para disfrutar.",
-    "description": "FRESKITO combina el gusto por los helados artesanales con sabores reconocibles y una presentación práctica e individual."
+    "title": "El sabor de siempre,",
+    "highlight": "con una frescura diferente.",
+    "description": "FRESKITO une ingredientes naturales, elaboración artesanal y una presentación práctica para que disfrutes tu sabor favorito donde quieras."
   },
   "benefits": [
     {"title": "100 % natural", "text": "Una propuesta artesanal que pone lo natural en el centro de cada momento refrescante."},
