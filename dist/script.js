@@ -35,8 +35,8 @@ function configureCarousel(content){
   if(!carousel||!track||!dots)return;
   track.innerHTML='';dots.innerHTML='';let active=0;let timer;
   const slides=slidesData.map((item,index)=>{
-    const slide=document.createElement('article');slide.className=`carousel-slide${index===0?' active':''}`;slide.setAttribute('aria-label',`${index+1} de ${slidesData.length}: ${item.name}`);slide.setAttribute('aria-hidden',String(index!==0));slide.style.setProperty('--slide-focus',item.focus||'50% 50%');slide.style.setProperty('--slide-zoom',String(item.zoom||1));
-    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index===0?'eager':'lazy';
+    const slide=document.createElement('article');slide.className=`carousel-slide${index===0?' active':''}`;slide.setAttribute('aria-label',`${index+1} de ${slidesData.length}: ${item.name}`);slide.setAttribute('aria-hidden',String(index!==0));slide.style.setProperty('--slide-focus','50% 50%');slide.style.setProperty('--slide-zoom','1');
+    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index===0?'eager':'lazy';fitFlavorImage(image,slide);
     const caption=document.createElement('div');caption.className='carousel-caption';const small=document.createElement('small');small.textContent=item.subtitle||'Helado artesanal';const strong=document.createElement('strong');strong.textContent=item.name;caption.append(small,strong);slide.append(image,caption);track.appendChild(slide);
     const dot=document.createElement('button');dot.type='button';dot.className=`carousel-dot${index===0?' active':''}`;dot.setAttribute('role','tab');dot.setAttribute('aria-label',`Mostrar ${item.name}`);dot.setAttribute('aria-selected',String(index===0));dot.addEventListener('click',()=>show(index,true));dots.appendChild(dot);return slide;
   });
