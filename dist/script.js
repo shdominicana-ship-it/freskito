@@ -122,18 +122,20 @@ function configureStores(content){
 function configureAssorted(content){
   const section=document.querySelector('.assorted-boxes');
   const grid=document.querySelector('#assorted-grid');
+  const shortcuts=document.querySelector('#assorted-shortcuts');
   if(!section||!grid)return;
   const boxes=content.assortedBoxes||[];
-  section.hidden=!boxes.length;grid.innerHTML='';
+  section.hidden=!boxes.length;grid.innerHTML='';if(shortcuts)shortcuts.innerHTML='';
   boxes.forEach((box,index)=>{
-    const card=document.createElement('article');card.className='assorted-card reveal visible';
+    const card=document.createElement('article');card.className='assorted-card reveal visible';card.id=`assorted-box-${index+1}`;card.tabIndex=-1;
     const media=document.createElement('div');media.className='assorted-card-media';
-    const image=document.createElement('img');image.src=box.image;image.alt=`Docena surtida FRESKITO: ${box.name}`;image.loading=index===0?'eager':'lazy';media.appendChild(image);
+    const image=document.createElement('img');image.src=box.image;image.alt=`Docena surtida FRESKITO: ${box.name}`;image.loading='eager';image.fetchPriority=index<2?'high':'auto';image.decoding='async';media.appendChild(image);
     const body=document.createElement('div');body.className='assorted-card-body';
     const badge=document.createElement('span');badge.className='assorted-card-badge';badge.textContent=box.badge||'12 helados · 3 sabores';
     const title=document.createElement('h3');title.textContent=box.name||'Docena surtida';
     const flavors=document.createElement('p');flavors.textContent=box.flavors||'';
     body.append(badge,title,flavors);card.append(media,body);grid.appendChild(card);
+    if(shortcuts){const shortcut=document.createElement('a');shortcut.href=`#${card.id}`;shortcut.textContent=box.name||`Combinación ${index+1}`;shortcut.addEventListener('click',event=>{event.preventDefault();card.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});card.focus({preventScroll:true});history.replaceState(null,'',`#${card.id}`)});shortcuts.appendChild(shortcut)}
   });
   const orderNumber=String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'');
   document.querySelectorAll('[data-assorted-whatsapp]').forEach(link=>link.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent('Hola FRESKITO, quiero pedir una docena surtida de 12 helados.')}`);
