@@ -114,6 +114,14 @@
       "image": "assets/sabor-11-1794959804367.png",
       "focus": "50% 50%",
       "zoom": 1
+    },
+    {
+      "name": "Vino ",
+      "subtitle": "¡Un sabor intenso y diferente!",
+      "description": "Una propuesta refrescante y llena de personalidad, con deliciosas notas afrutadas que evocan el carácter del vino y un toque de dulzura que hace especial cada bocado.",
+      "image": "assets/sabor-12-1794960617344.jpg",
+      "focus": "50% 50%",
+      "zoom": 1
     }
   ],
   "product": {
