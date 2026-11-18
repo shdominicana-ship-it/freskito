@@ -5,6 +5,7 @@
   "nav": {
     "product": "El producto",
     "flavors": "Sabores",
+    "assorted": "Docenas surtidas",
     "seasonal": "Temporada",
     "sales": "Puntos de venta",
     "contact": "Contáctanos"
@@ -198,6 +199,30 @@
       "emoji": "🌿",
       "label": "Especial",
       "name": "Guanábana"
+    }
+  ],
+  "assortedSection": {
+    "eyebrow": "Más sabores para compartir",
+    "title": "Docenas surtidas.",
+    "highlight": "Elige tu combinación favorita.",
+    "description": "Disfruta una caja con 12 helados FRESKITO: 3 sabores diferentes y 4 unidades de cada sabor. Una forma práctica y deliciosa de compartir variedad en cada ocasión.",
+    "units": "helados",
+    "flavorCount": "sabores",
+    "perFlavor": "de cada uno",
+    "cta": "Pedir una docena surtida"
+  },
+  "assortedBoxes": [
+    {
+      "name": "Selección tropical",
+      "flavors": "Coco con batata · Chinola · Pitahaya",
+      "badge": "3 sabores · 4 de cada uno",
+      "image": "assets/docena-surtida-tropical.png"
+    },
+    {
+      "name": "Selección cremosa",
+      "flavors": "Dulce de leche · Galletas y crema · Fresa con leche",
+      "badge": "3 sabores · 4 de cada uno",
+      "image": "assets/docena-surtida-cremosa.png"
     }
   ],
   "seasonalSection": {

@@ -31,11 +31,12 @@ async function connect(event){
 }
 
 function buildEditor(){
-  const sections=[['portada','Portada'],['marca','Marca'],['producto','Producto'],['sabores','Sabores'],['temporada','Productos de temporada'],['ventas','Ventas'],['puntos','Puntos de venta'],['contacto','Contacto'],['redes','Redes sociales'],['avanzado','Avanzado']];
+  const sections=[['portada','Portada'],['marca','Marca'],['producto','Producto'],['sabores','Sabores'],['surtidas','Docenas surtidas'],['temporada','Productos de temporada'],['ventas','Ventas'],['puntos','Puntos de venta'],['contacto','Contacto'],['redes','Redes sociales'],['avanzado','Avanzado']];
   $('#section-nav').innerHTML=sections.map(([id,label])=>`<a href="#${id}">${label}</a>`).join('');
   $('#benefit-fields').innerHTML=content.benefits.map((benefit,index)=>`<div class="repeat-card"><h3>Beneficio ${index+1}</h3><label>Título<input data-path="benefits.${index}.title"></label><label>Descripción<textarea rows="4" data-path="benefits.${index}.text"></textarea></label></div>`).join('');
-  renderSlideEditors();renderSeasonalEditors();renderStoreEditors();bindContentFields();
+  renderSlideEditors();renderAssortedEditors();renderSeasonalEditors();renderStoreEditors();bindContentFields();
   $('#add-slide').onclick=()=>{content.heroSlides=content.heroSlides||[];content.heroSlides.push({name:'Nuevo sabor',subtitle:'Helado artesanal FRESKITO',description:'Describe aquí sus ingredientes, textura y notas de sabor.',image:'assets/productos-freskito.jpg',focus:'50% 50%',zoom:1});pendingUploads.clear();renderSlideEditors();markDirty()};
+  $('#add-assorted').onclick=()=>{content.assortedBoxes=content.assortedBoxes||[];content.assortedBoxes.push({name:'Nueva selección',flavors:'Sabor 1 · Sabor 2 · Sabor 3',badge:'3 sabores · 4 de cada uno',image:''});pendingUploads.clear();renderAssortedEditors();markDirty()};
   $('#add-seasonal').onclick=()=>{content.seasonalProducts=content.seasonalProducts||[];content.seasonalProducts.push({name:'Nuevo sabor',subtitle:'Edición artesanal por tiempo limitado.',badge:'Disponible por tiempo limitado',image:''});pendingUploads.clear();renderSeasonalEditors();markDirty()};
   $('#add-store').onclick=()=>{content.stores=content.stores||[];content.stores.push({name:'Nuevo Punto Aliado',channel:'Colmado / Minimarket',address:'',phone:'',whatsapp:'',mapUrl:''});renderStoreEditors();markDirty()};
   $('#preview-hero').src=content.hero.image;$('#preview-logo').src=content.branding.logo;syncJson();
@@ -66,6 +67,12 @@ function renderSeasonalEditors(){
   bindContentFields(list);bindUploadFields(list);list.querySelectorAll('[data-remove-seasonal]').forEach(button=>button.onclick=()=>{content.seasonalProducts.splice(Number(button.dataset.removeSeasonal),1);pendingUploads.clear();renderSeasonalEditors();markDirty()});
 }
 
+function renderAssortedEditors(){
+  const list=$('#assorted-admin-list');if(!list)return;content.assortedBoxes=content.assortedBoxes||[];
+  list.innerHTML=content.assortedBoxes.length?content.assortedBoxes.map((box,index)=>`<div class="assorted-admin-card">${box.image?`<img id="preview-assorted-${index}" src="${box.image}" alt="Vista previa de ${box.name}">`:`<div id="preview-assorted-${index}" class="assorted-admin-placeholder">12</div>`}<div class="assorted-admin-fields"><button type="button" class="remove-assorted" data-remove-assorted="${index}">Eliminar</button><label>Nombre de la selección<input data-path="assortedBoxes.${index}.name"></label><label>Sabores incluidos<textarea data-path="assortedBoxes.${index}.flavors" rows="2"></textarea></label><label>Distintivo<input data-path="assortedBoxes.${index}.badge"></label><label class="upload">Subir presentación<input type="file" accept="image/png,image/jpeg,image/webp" data-upload="assortedBoxes.${index}.image" data-preview="preview-assorted-${index}"><span>Seleccionar imagen</span><small>PNG, JPG o WebP · máximo 4 MB</small></label></div></div>`).join(''):'<p class="help">No hay combinaciones surtidas publicadas.</p>';
+  bindContentFields(list);bindUploadFields(list);list.querySelectorAll('[data-remove-assorted]').forEach(button=>button.onclick=()=>{content.assortedBoxes.splice(Number(button.dataset.removeAssorted),1);pendingUploads.clear();renderAssortedEditors();markDirty()});
+}
+
 function previewUpload(event){
   const file=event.target.files[0];if(!file)return;
   const max=event.target.dataset.upload==='branding.logo'?2:4;
@@ -90,7 +97,7 @@ async function publish(event){
   try{
     for(const [slot,file] of pendingUploads){
       const ext=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'');
-      const name=slot==='hero.image'?'imagen-principal':slot==='branding.logo'?'logo':slot.startsWith('seasonalProducts.')?`temporada-${Number(slot.split('.')[1])+1}`:`sabor-${Number(slot.split('.')[1])+1}`;const path=`dist/assets/${name}-${Date.now()}.${ext}`;
+      const name=slot==='hero.image'?'imagen-principal':slot==='branding.logo'?'logo':slot.startsWith('seasonalProducts.')?`temporada-${Number(slot.split('.')[1])+1}`:slot.startsWith('assortedBoxes.')?`docena-surtida-${Number(slot.split('.')[1])+1}`:`sabor-${Number(slot.split('.')[1])+1}`;const path=`dist/assets/${name}-${Date.now()}.${ext}`;
       await putFile(path,await fileToBase64(file),`Actualizar ${name} de FRESKITO`);setPath(content,slot,path.replace('dist/',''));if(slot.startsWith('heroSlides.')){const slideIndex=Number(slot.split('.')[1]);content.heroSlides[slideIndex].zoom=1;content.heroSlides[slideIndex].focus='50% 50%'}
     }
     const latest=await api(`/repos/${OWNER}/${REPO}/contents/${CONTENT_PATH}?ref=${BRANCH}`);if(latest.ok)contentSha=(await latest.json()).sha;

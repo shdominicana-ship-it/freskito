@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="admin.css">
-  <link rel="stylesheet" href="admin-carousel.css?v=20261117-9">
+  <link rel="stylesheet" href="admin-carousel.css?v=20261117-10">
 </head>
 <body>
   <header class="admin-header">
@@ -63,6 +63,14 @@
           <label>Texto destacado<input data-path="flavors.highlight"></label><label>Descripción<textarea data-path="flavors.description" rows="3"></textarea></label>
         </fieldset>
 
+        <fieldset id="surtidas"><legend>Docenas surtidas</legend><div class="seasonal-module-note"><b>Administra las cajas de 12 unidades.</b><span>Cada caja puede mostrar su propia presentación, nombre y combinación de 3 sabores.</span></div>
+          <div class="grid two"><label>Etiqueta<input data-path="assortedSection.eyebrow"></label><label>Título<input data-path="assortedSection.title"></label></div>
+          <label>Texto destacado<input data-path="assortedSection.highlight"></label><label>Descripción<textarea data-path="assortedSection.description" rows="3"></textarea></label>
+          <div class="grid two"><label>Etiqueta de unidades<input data-path="assortedSection.units"></label><label>Etiqueta de sabores<input data-path="assortedSection.flavorCount"></label></div>
+          <div class="grid two"><label>Etiqueta por sabor<input data-path="assortedSection.perFlavor"></label><label>Texto del botón<input data-path="assortedSection.cta"></label></div>
+          <div class="divider"></div><div id="assorted-admin-list"></div><button type="button" class="primary" id="add-assorted">+ Crear combinación surtida</button>
+        </fieldset>
+
         <fieldset id="temporada"><legend>Productos de temporada</legend><div class="seasonal-module-note"><b>Crea campañas temporales sin límite.</b><span>Cada producto puede tener su propia fotografía, nombre, descripción y distintivo.</span></div><div class="grid two"><label>Título de la sección<input data-path="seasonalSection.title"></label><label>Texto destacado<input data-path="seasonalSection.highlight"></label></div><label>Descripción de la sección<textarea data-path="seasonalSection.description" rows="2"></textarea></label><div class="divider"></div><div id="seasonal-admin-list"></div><button type="button" class="primary" id="add-seasonal">+ Crear producto de temporada</button></fieldset>
 
         <fieldset id="ventas"><legend>Ventas y Puntos Aliados</legend>
@@ -101,6 +109,6 @@
     </section>
   </main>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="admin.js?v=20261117-9"></script>
+  <script src="admin.js?v=20261117-10"></script>
 </body>
 </html>

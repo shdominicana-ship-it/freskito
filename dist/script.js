@@ -119,6 +119,26 @@ function configureStores(content){
   const officeAddress=content.office?.address||'';document.querySelectorAll('[data-office-map]').forEach(link=>link.href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`);
 }
 
+function configureAssorted(content){
+  const section=document.querySelector('.assorted-boxes');
+  const grid=document.querySelector('#assorted-grid');
+  if(!section||!grid)return;
+  const boxes=content.assortedBoxes||[];
+  section.hidden=!boxes.length;grid.innerHTML='';
+  boxes.forEach((box,index)=>{
+    const card=document.createElement('article');card.className='assorted-card reveal visible';
+    const media=document.createElement('div');media.className='assorted-card-media';
+    const image=document.createElement('img');image.src=box.image;image.alt=`Docena surtida FRESKITO: ${box.name}`;image.loading=index===0?'eager':'lazy';media.appendChild(image);
+    const body=document.createElement('div');body.className='assorted-card-body';
+    const badge=document.createElement('span');badge.className='assorted-card-badge';badge.textContent=box.badge||'12 helados · 3 sabores';
+    const title=document.createElement('h3');title.textContent=box.name||'Docena surtida';
+    const flavors=document.createElement('p');flavors.textContent=box.flavors||'';
+    body.append(badge,title,flavors);card.append(media,body);grid.appendChild(card);
+  });
+  const orderNumber=String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'');
+  document.querySelectorAll('[data-assorted-whatsapp]').forEach(link=>link.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent('Hola FRESKITO, quiero pedir una docena surtida de 12 helados.')}`);
+}
+
 function configureSeasonal(content){
   const section=document.querySelector('.seasonal-products');const grid=document.querySelector('#seasonal-grid');if(!section||!grid)return;
   const products=content.seasonalProducts||[];section.hidden=!products.length;grid.innerHTML='';
@@ -137,7 +157,7 @@ async function loadContent(){
     const content=await response.json();
     document.querySelectorAll('[data-content]').forEach(element=>{const value=getPath(content,element.dataset.content);if(value!==undefined)element.textContent=value});
     document.querySelectorAll('[data-image]').forEach(image=>{const value=getPath(content,image.dataset.image);if(value)image.src=value});
-    configureContact(content);configureSocial(content);configureCarousel(content);configureFlavorCatalog(content);configureStores(content);configureSeasonal(content);
+    configureContact(content);configureSocial(content);configureCarousel(content);configureFlavorCatalog(content);configureAssorted(content);configureStores(content);configureSeasonal(content);
   }catch(error){console.warn(error)}
 }
 
