@@ -44,7 +44,7 @@
       "zoom": 2.15
     },
     {
-      "name": "Fresa con Leche",
+      "name": "Fresa con Crema",
       "subtitle": "¡Suavidad y frescura en cada bocado!",
       "description": "El sabor frutal de la fresa se combina con una base suave y cremosa para crear un clásico fresco, ligero y lleno de alegría.",
       "image": "assets/sabor-3-1794897563832.png",
@@ -120,6 +120,14 @@
       "subtitle": "¡Un sabor intenso y diferente!",
       "description": "Una propuesta refrescante y llena de personalidad, con deliciosas notas afrutadas que evocan el carácter del vino y un toque de dulzura que hace especial cada bocado.",
       "image": "assets/sabor-12-1794960617344.jpg",
+      "focus": "50% 50%",
+      "zoom": 1
+    },
+    {
+      "name": "Coco con Leche",
+      "subtitle": "¡La cremosidad del paraíso tropical!",
+      "description": "Déjate conquistar por la irresistible combinación del auténtico sabor del coco y la suavidad de la leche. Un helado artesanal de textura cremosa, delicada dulzura y exquisitas notas tropicales que hacen de cada bocado un momento especial.\n\n¡Una deliciosa caricia tropical que refresca y enamora!",
+      "image": "assets/sabor-13-1794961362054.png",
       "focus": "50% 50%",
       "zoom": 1
     }
