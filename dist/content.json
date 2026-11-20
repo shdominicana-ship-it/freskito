@@ -1,17 +1,18 @@
 {
   "branding": {
-    "logo": "assets/logo-freskito-transparente.png"
+    "logo": "assets/logo-heladisimo-transparente.png"
   },
   "nav": {
     "product": "El producto",
     "flavors": "Sabores",
+    "assorted": "Docenas surtidas",
     "seasonal": "Temporada",
     "sales": "Puntos de venta",
     "contact": "Contáctanos"
   },
   "actions": {
     "discover": "Descubre los sabores",
-    "find": "Encuentra tu FRESKITO",
+    "find": "Encuentra tu HELADÍSIMO",
     "askStore": "Preguntar por un punto de venta",
     "partner": "Quiero ser Punto Aliado",
     "whatsapp": "Escribir por WhatsApp",
@@ -24,9 +25,18 @@
     "description": "Una experiencia artesanal en cada bocado. Descubre sabores clásicos y tropicales, preparados para convertir cualquier momento en algo especial.",
     "sealTop": "100 %",
     "sealBottom": "NATURAL",
-    "image": "assets/imagen-principal-1794961616277.png"
+    "image": "assets/heladisimo-cuatro-sabores.jpg"
   },
   "heroSlides": [
+    {
+      "name": "Cuatro sabores para disfrutar",
+      "subtitle": "HELADÍSIMO · Helados artesanales · 100 % natural",
+      "description": "Presentación oficial de Chinola, Fresa Crema, Galletas y Crema y Coco.",
+      "image": "assets/heladisimo-cuatro-sabores.jpg",
+      "focus": "50% 50%",
+      "zoom": 1,
+      "isGroup": true
+    },
     {
       "name": "Dulce de leche",
       "subtitle": "¡Cremoso, irresistible y delicioso!",
@@ -94,7 +104,7 @@
     {
       "name": "Ciruela",
       "subtitle": "¡Dulzura frutal con personalidad!",
-      "description": "Un sabor frutal distinto, equilibrado entre dulzura y frescura, con la personalidad de la ciruela y el sello artesanal de FRESKITO.",
+      "description": "Un sabor frutal distinto, equilibrado entre dulzura y frescura, con la personalidad de la ciruela y el sello artesanal de HELADÍSIMO.",
       "image": "assets/sabor-9-1794898860735.png",
       "focus": "50% 50%",
       "zoom": 1
@@ -136,7 +146,7 @@
     "eyebrow": "Naturalmente delicioso",
     "title": "El sabor de siempre,",
     "highlight": "con una frescura diferente.",
-    "description": "FRESKITO utiliza ingredientes naturales, elaboración artesanal y una presentación práctica para que disfrutes tu sabor favorito donde quieras."
+    "description": "HELADÍSIMO utiliza ingredientes naturales, elaboración artesanal y una presentación práctica para que disfrutes tu sabor favorito donde quieras."
   },
   "benefits": [
     {
@@ -200,6 +210,30 @@
       "name": "Guanábana"
     }
   ],
+  "assortedSection": {
+    "eyebrow": "Más sabores para compartir",
+    "title": "Docenas surtidas.",
+    "highlight": "Elige tu combinación favorita.",
+    "description": "Disfruta una caja con 12 helados HELADÍSIMO: 3 sabores diferentes y 4 unidades de cada sabor. Una forma práctica y deliciosa de compartir variedad en cada ocasión.",
+    "units": "helados",
+    "flavorCount": "sabores",
+    "perFlavor": "de cada uno",
+    "cta": "Pedir una docena surtida"
+  },
+  "assortedBoxes": [
+    {
+      "name": "Selección tropical",
+      "flavors": "Coco con batata · Chinola · Pitahaya",
+      "badge": "3 sabores · 4 de cada uno",
+      "image": "assets/docena-surtida-tropical.png"
+    },
+    {
+      "name": "Selección cremosa",
+      "flavors": "Dulce de leche · Galletas y crema · Fresa con leche",
+      "badge": "3 sabores · 4 de cada uno",
+      "image": "assets/docena-surtida-cremosa.png"
+    }
+  ],
   "seasonalSection": {
     "eyebrow": "Ediciones especiales",
     "title": "Sabores de temporada.",
@@ -216,9 +250,9 @@
   ],
   "sales": {
     "eyebrow": "Cerca de ti",
-    "title": "Tu próximo FRESKITO",
+    "title": "Tu próximo HELADÍSIMO",
     "highlight": "está más cerca.",
-    "description": "Encuéntralo en colmados, minimarkets, reposterías y cafeterías aliadas. Busca el afiche de FRESKITO cerca de la caja o el congelador.",
+    "description": "Encuéntralo en colmados, minimarkets, reposterías y cafeterías aliadas. Busca el afiche de HELADÍSIMO cerca de la caja o el congelador.",
     "price": "RD$60",
     "priceLabel": "Precio sugerido",
     "priceUnit": "por unidad"
@@ -237,7 +271,7 @@
     "eyebrow": "Encuéntranos",
     "title": "Puntos de venta",
     "highlight": "cada vez más cerca de ti.",
-    "description": "Conoce los establecimientos que forman parte del programa de Puntos Aliados FRESKITO."
+    "description": "Conoce los establecimientos que forman parte del programa de Puntos Aliados HELADÍSIMO."
   },
   "stores": [
     {
@@ -250,19 +284,19 @@
     }
   ],
   "orders": {
-    "title": "Pide tu FRESKITO",
+    "title": "Pide tu HELADÍSIMO",
     "description": "Haz tu pedido o consulta disponibilidad directamente por WhatsApp.",
     "displayPhone": "829 758 4030",
     "whatsapp": "18297584030"
   },
   "office": {
-    "title": "Oficinas FRESKITO",
+    "title": "Oficinas HELADÍSIMO",
     "address": "Núñez de Cáceres no. 22, Plaza 2B, San Gerónimo, Distrito Nacional."
   },
   "partners": {
     "eyebrow": "Para negocios",
     "title": "Conviértete en un",
-    "highlight": "Punto Aliado FRESKITO.",
+    "highlight": "Punto Aliado HELADÍSIMO.",
     "description": "Incorpora una selección de sabores clásicos y gourmet a tu negocio con precios especiales, descuentos por volumen, material publicitario y coordinación de reposiciones."
   },
   "partnerBenefits": [
@@ -282,7 +316,7 @@
     "phone": "+18297584030"
   },
   "social": {
-    "instagram": "https://www.instagram.com/freskito.rd/",
+    "instagram": "",
     "facebook": "",
     "tiktok": "",
     "youtube": ""

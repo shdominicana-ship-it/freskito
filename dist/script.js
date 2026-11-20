@@ -8,7 +8,7 @@ function fitFlavorImage(image,container){
 function configureContact(content){
   const whatsapp=String(content.contact?.whatsapp||'').replace(/\D/g,'');
   const phone=content.contact?.phone||`+${whatsapp}`;
-  const messages=['Hola FRESKITO, ¿dónde puedo comprar sus helados?','Hola FRESKITO, quiero información para convertirme en Punto Aliado.','Hola FRESKITO, quiero más información.','Hola FRESKITO, quiero más información.'];
+  const messages=['Hola HELADÍSIMO, ¿dónde puedo comprar sus helados?','Hola HELADÍSIMO, quiero información para convertirme en Punto Aliado.','Hola HELADÍSIMO, quiero más información.','Hola HELADÍSIMO, quiero más información.'];
   document.querySelectorAll('a[href*="wa.me"]').forEach((link,index)=>{link.href=`https://wa.me/${whatsapp}?text=${encodeURIComponent(messages[index]||messages[2])}`});
   document.querySelectorAll('[data-phone-link],a[href^="tel:"]').forEach(link=>link.href=`tel:${phone}`);
 }
@@ -35,8 +35,8 @@ function configureCarousel(content){
   if(!carousel||!track||!dots)return;
   track.innerHTML='';dots.innerHTML='';let active=0;let timer;
   const slides=slidesData.map((item,index)=>{
-    const slide=document.createElement('article');slide.className=`carousel-slide${index===0?' active':''}`;slide.setAttribute('aria-label',`${index+1} de ${slidesData.length}: ${item.name}`);slide.setAttribute('aria-hidden',String(index!==0));slide.style.setProperty('--slide-focus','50% 50%');slide.style.setProperty('--slide-zoom','1');
-    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index===0?'eager':'lazy';fitFlavorImage(image,slide);
+    const slide=document.createElement('article');slide.className=`carousel-slide${index===0?' active':''}`;if(item.isGroup)slide.classList.add('carousel-slide-group');slide.setAttribute('aria-label',`${index+1} de ${slidesData.length}: ${item.name}`);slide.setAttribute('aria-hidden',String(index!==0));slide.style.setProperty('--slide-focus','50% 50%');slide.style.setProperty('--slide-zoom','1');
+    const image=document.createElement('img');image.src=item.image;image.alt=`Helado HELADÍSIMO sabor ${item.name}`;image.loading=index===0?'eager':'lazy';fitFlavorImage(image,slide);
     const caption=document.createElement('div');caption.className='carousel-caption';const small=document.createElement('small');small.textContent=item.subtitle||'Helado artesanal';const strong=document.createElement('strong');strong.textContent=item.name;caption.append(small,strong);slide.append(image,caption);track.appendChild(slide);
     const dot=document.createElement('button');dot.type='button';dot.className=`carousel-dot${index===0?' active':''}`;dot.setAttribute('role','tab');dot.setAttribute('aria-label',`Mostrar ${item.name}`);dot.setAttribute('aria-selected',String(index===0));dot.addEventListener('click',()=>show(index,true));dots.appendChild(dot);return slide;
   });
@@ -69,12 +69,12 @@ function configureFlavorCatalog(content){
   function openFlavor(item,trigger){
     previousFocus=trigger;
     dialogTitle.textContent=item.name;
-    dialogSubtitle.textContent=item.subtitle||'Helado artesanal FRESKITO';
-    dialogDescription.textContent=item.description||`${item.subtitle||'Un sabor preparado para disfrutar.'} Elaborado artesanalmente con ingredientes naturales y la frescura característica de FRESKITO.`;
+    dialogSubtitle.textContent=item.subtitle||'Helado artesanal HELADÍSIMO';
+    dialogDescription.textContent=item.description||`${item.subtitle||'Un sabor preparado para disfrutar.'} Elaborado artesanalmente con ingredientes naturales y la frescura característica de HELADÍSIMO.`;
     dialogImage.src=item.image;
-    dialogImage.alt=`Helado FRESKITO sabor ${item.name}`;
+    dialogImage.alt=`Helado HELADÍSIMO sabor ${item.name}`;
     const dialogMedia=dialog.querySelector('.flavor-dialog-media');dialogMedia.classList.remove('flavor-media-contain');dialogMedia.style.setProperty('--flavor-focus','50% 50%');dialogMedia.style.setProperty('--flavor-zoom','1');fitFlavorImage(dialogImage,dialogMedia);
-    dialogOrder.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent(`Hola FRESKITO, quiero pedir el sabor ${item.name}.`)}`;
+    dialogOrder.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent(`Hola HELADÍSIMO, quiero pedir el sabor ${item.name}.`)}`;
     if(typeof dialog.showModal==='function')dialog.showModal();else dialog.setAttribute('open','');
     document.body.classList.add('dialog-open');
   }
@@ -86,11 +86,11 @@ function configureFlavorCatalog(content){
   flavors.forEach((item,index)=>{
     const card=document.createElement('button');card.type='button';card.className='flavor-card flavor-catalog-card reveal visible';card.setAttribute('aria-label',`Ver detalles del sabor ${item.name}`);
     const media=document.createElement('span');media.className='flavor-card-media';media.style.setProperty('--flavor-focus','50% 50%');media.style.setProperty('--flavor-zoom','1');
-    const image=document.createElement('img');image.src=item.image;image.alt=`Helado FRESKITO sabor ${item.name}`;image.loading=index<3?'eager':'lazy';media.appendChild(image);fitFlavorImage(image,media);
+    const image=document.createElement('img');image.src=item.image;image.alt=`Helado HELADÍSIMO sabor ${item.name}`;image.loading=index<3?'eager':'lazy';media.appendChild(image);fitFlavorImage(image,media);
     const body=document.createElement('span');body.className='flavor-card-body';
     const natural=document.createElement('small');natural.textContent='100 % natural';
     const title=document.createElement('strong');title.textContent=item.name;
-    const subtitle=document.createElement('span');subtitle.className='flavor-card-subtitle';subtitle.textContent=item.subtitle||'Helado artesanal FRESKITO';
+    const subtitle=document.createElement('span');subtitle.className='flavor-card-subtitle';subtitle.textContent=item.subtitle||'Helado artesanal HELADÍSIMO';
     const action=document.createElement('span');action.className='flavor-card-action';action.textContent='Ver sabor →';
     body.append(natural,title,subtitle,action);card.append(media,body);card.addEventListener('click',()=>openFlavor(item,card));grid.appendChild(card);
   });
@@ -107,7 +107,7 @@ function configureStores(content){
   stores.forEach(store=>{
     const card=document.createElement('article');card.className='store-card reveal visible';
     const channel=document.createElement('span');channel.className='store-channel';channel.textContent=store.channel||'Punto Aliado';
-    const title=document.createElement('h3');title.textContent=store.name||'Punto Aliado FRESKITO';
+    const title=document.createElement('h3');title.textContent=store.name||'Punto Aliado HELADÍSIMO';
     const address=document.createElement('p');address.textContent=store.address||'';card.append(channel,title,address);
     const actions=document.createElement('div');actions.className='store-actions';
     if(store.mapUrl){const map=document.createElement('a');map.href=store.mapUrl;map.target='_blank';map.rel='noopener';map.textContent='Ver en el mapa →';actions.appendChild(map)}
@@ -115,7 +115,7 @@ function configureStores(content){
     card.appendChild(actions);grid.appendChild(card);
   });
   const orderNumber=String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'');
-  document.querySelectorAll('[data-order-whatsapp]').forEach(link=>link.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent('Hola FRESKITO, quiero realizar un pedido.')}`);
+  document.querySelectorAll('[data-order-whatsapp]').forEach(link=>link.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent('Hola HELADÍSIMO, quiero realizar un pedido.')}`);
   const officeAddress=content.office?.address||'';document.querySelectorAll('[data-office-map]').forEach(link=>link.href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(officeAddress)}`);
 }
 
@@ -129,7 +129,7 @@ function configureAssorted(content){
   boxes.forEach((box,index)=>{
     const card=document.createElement('article');card.className='assorted-card reveal visible';card.id=`assorted-box-${index+1}`;card.tabIndex=-1;
     const media=document.createElement('div');media.className='assorted-card-media';
-    const image=document.createElement('img');image.src=box.image;image.alt=`Docena surtida FRESKITO: ${box.name}`;image.loading='eager';image.fetchPriority=index<2?'high':'auto';image.decoding='async';media.appendChild(image);
+    const image=document.createElement('img');image.src=box.image;image.alt=`Docena surtida HELADÍSIMO: ${box.name}`;image.loading='eager';image.fetchPriority=index<2?'high':'auto';image.decoding='async';media.appendChild(image);
     const body=document.createElement('div');body.className='assorted-card-body';
     const badge=document.createElement('span');badge.className='assorted-card-badge';badge.textContent=box.badge||'12 helados · 3 sabores';
     const title=document.createElement('h3');title.textContent=box.name||'Docena surtida';
@@ -138,7 +138,7 @@ function configureAssorted(content){
     if(shortcuts){const shortcut=document.createElement('a');shortcut.href=`#${card.id}`;shortcut.textContent=box.name||`Combinación ${index+1}`;shortcut.addEventListener('click',event=>{event.preventDefault();card.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});card.focus({preventScroll:true});history.replaceState(null,'',`#${card.id}`)});shortcuts.appendChild(shortcut)}
   });
   const orderNumber=String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'');
-  document.querySelectorAll('[data-assorted-whatsapp]').forEach(link=>link.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent('Hola FRESKITO, quiero pedir una docena surtida de 12 helados.')}`);
+  document.querySelectorAll('[data-assorted-whatsapp]').forEach(link=>link.href=`https://wa.me/${orderNumber}?text=${encodeURIComponent('Hola HELADÍSIMO, quiero pedir una docena surtida de 12 helados.')}`);
 }
 
 function configureSeasonal(content){
@@ -147,8 +147,8 @@ function configureSeasonal(content){
   products.forEach((product,index)=>{
     const card=document.createElement('article');card.className='seasonal-card reveal visible';
     const media=document.createElement('div');media.className='seasonal-media';
-    if(product.image){const image=document.createElement('img');image.src=product.image;image.alt=`Helado FRESKITO de temporada sabor ${product.name}`;image.loading=index===0?'eager':'lazy';media.appendChild(image)}else{const placeholder=document.createElement('div');placeholder.className='seasonal-placeholder';placeholder.innerHTML='<span>🥭</span><small>Imagen próximamente</small>';media.appendChild(placeholder)}
-    const body=document.createElement('div');body.className='seasonal-body';const badge=document.createElement('span');badge.className='seasonal-badge';badge.textContent=product.badge||'Edición de temporada';const title=document.createElement('h3');title.textContent=product.name;const text=document.createElement('p');text.textContent=product.subtitle||'';const link=document.createElement('a');link.className='text-link';link.href=`https://wa.me/${String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'')}?text=${encodeURIComponent(`Hola FRESKITO, quiero pedir el sabor de temporada ${product.name}.`)}`;link.target='_blank';link.rel='noopener';link.textContent='Pedir por WhatsApp →';body.append(badge,title,text,link);card.append(media,body);grid.appendChild(card);
+    if(product.image){const image=document.createElement('img');image.src=product.image;image.alt=`Helado HELADÍSIMO de temporada sabor ${product.name}`;image.loading=index===0?'eager':'lazy';media.appendChild(image)}else{const placeholder=document.createElement('div');placeholder.className='seasonal-placeholder';placeholder.innerHTML='<span>🥭</span><small>Imagen próximamente</small>';media.appendChild(placeholder)}
+    const body=document.createElement('div');body.className='seasonal-body';const badge=document.createElement('span');badge.className='seasonal-badge';badge.textContent=product.badge||'Edición de temporada';const title=document.createElement('h3');title.textContent=product.name;const text=document.createElement('p');text.textContent=product.subtitle||'';const link=document.createElement('a');link.className='text-link';link.href=`https://wa.me/${String(content.orders?.whatsapp||content.contact?.whatsapp||'').replace(/\D/g,'')}?text=${encodeURIComponent(`Hola HELADÍSIMO, quiero pedir el sabor de temporada ${product.name}.`)}`;link.target='_blank';link.rel='noopener';link.textContent='Pedir por WhatsApp →';body.append(badge,title,text,link);card.append(media,body);grid.appendChild(card);
   });
 }
 

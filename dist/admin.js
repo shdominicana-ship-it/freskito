@@ -35,7 +35,7 @@ function buildEditor(){
   $('#section-nav').innerHTML=sections.map(([id,label])=>`<a href="#${id}">${label}</a>`).join('');
   $('#benefit-fields').innerHTML=content.benefits.map((benefit,index)=>`<div class="repeat-card"><h3>Beneficio ${index+1}</h3><label>Título<input data-path="benefits.${index}.title"></label><label>Descripción<textarea rows="4" data-path="benefits.${index}.text"></textarea></label></div>`).join('');
   renderSlideEditors();renderAssortedEditors();renderSeasonalEditors();renderStoreEditors();bindContentFields();
-  $('#add-slide').onclick=()=>{content.heroSlides=content.heroSlides||[];content.heroSlides.push({name:'Nuevo sabor',subtitle:'Helado artesanal FRESKITO',description:'Describe aquí sus ingredientes, textura y notas de sabor.',image:'assets/productos-freskito.jpg',focus:'50% 50%',zoom:1});pendingUploads.clear();renderSlideEditors();markDirty()};
+  $('#add-slide').onclick=()=>{content.heroSlides=content.heroSlides||[];content.heroSlides.push({name:'Nuevo sabor',subtitle:'Helado artesanal HELADÍSIMO',description:'Describe aquí sus ingredientes, textura y notas de sabor.',image:'assets/productos-freskito.jpg',focus:'50% 50%',zoom:1});pendingUploads.clear();renderSlideEditors();markDirty()};
   $('#add-assorted').onclick=()=>{content.assortedBoxes=content.assortedBoxes||[];content.assortedBoxes.push({name:'Nueva selección',flavors:'Sabor 1 · Sabor 2 · Sabor 3',badge:'3 sabores · 4 de cada uno',image:''});pendingUploads.clear();renderAssortedEditors();markDirty()};
   $('#add-seasonal').onclick=()=>{content.seasonalProducts=content.seasonalProducts||[];content.seasonalProducts.push({name:'Nuevo sabor',subtitle:'Edición artesanal por tiempo limitado.',badge:'Disponible por tiempo limitado',image:''});pendingUploads.clear();renderSeasonalEditors();markDirty()};
   $('#add-store').onclick=()=>{content.stores=content.stores||[];content.stores.push({name:'Nuevo Punto Aliado',channel:'Colmado / Minimarket',address:'',phone:'',whatsapp:'',mapUrl:''});renderStoreEditors();markDirty()};
@@ -98,10 +98,10 @@ async function publish(event){
     for(const [slot,file] of pendingUploads){
       const ext=(file.name.split('.').pop()||'jpg').toLowerCase().replace(/[^a-z0-9]/g,'');
       const name=slot==='hero.image'?'imagen-principal':slot==='branding.logo'?'logo':slot.startsWith('seasonalProducts.')?`temporada-${Number(slot.split('.')[1])+1}`:slot.startsWith('assortedBoxes.')?`docena-surtida-${Number(slot.split('.')[1])+1}`:`sabor-${Number(slot.split('.')[1])+1}`;const path=`dist/assets/${name}-${Date.now()}.${ext}`;
-      await putFile(path,await fileToBase64(file),`Actualizar ${name} de FRESKITO`);setPath(content,slot,path.replace('dist/',''));if(slot.startsWith('heroSlides.')){const slideIndex=Number(slot.split('.')[1]);content.heroSlides[slideIndex].zoom=1;content.heroSlides[slideIndex].focus='50% 50%'}
+      await putFile(path,await fileToBase64(file),`Actualizar ${name} de HELADÍSIMO`);setPath(content,slot,path.replace('dist/',''));if(slot.startsWith('heroSlides.')){const slideIndex=Number(slot.split('.')[1]);content.heroSlides[slideIndex].zoom=1;content.heroSlides[slideIndex].focus='50% 50%'}
     }
     const latest=await api(`/repos/${OWNER}/${REPO}/contents/${CONTENT_PATH}?ref=${BRANCH}`);if(latest.ok)contentSha=(await latest.json()).sha;
-    const result=await putFile(CONTENT_PATH,encodeBase64(`${JSON.stringify(content,null,2)}\n`),'Actualizar contenido del sitio FRESKITO',contentSha);
+    const result=await putFile(CONTENT_PATH,encodeBase64(`${JSON.stringify(content,null,2)}\n`),'Actualizar contenido del sitio HELADÍSIMO',contentSha);
     contentSha=result.content.sha;pendingUploads.clear();dirty=false;$('#save-state').textContent='Publicado · GitHub está desplegando la actualización';syncJson();toast('Cambios publicados. La web se actualizará en aproximadamente un minuto.');
   }catch(error){$('#save-state').textContent='No se pudo publicar';toast(error.message,true)}finally{buttons.forEach(button=>{button.disabled=false;button.textContent='Publicar cambios'})}
 }
