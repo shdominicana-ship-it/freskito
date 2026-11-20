@@ -41,7 +41,7 @@
       "name": "Dulce de leche",
       "subtitle": "¡Cremoso, irresistible y delicioso!",
       "description": "Una experiencia suave y envolvente, con el sabor acaramelado del dulce de leche y una textura artesanal deliciosamente cremosa.",
-      "image": "assets/sabor-1-1794896107530.png",
+      "image": "assets/heladisimo-dulce-de-leche.png",
       "focus": "17% 48%",
       "zoom": 2.15
     },
@@ -49,7 +49,7 @@
       "name": "Galletas y crema",
       "subtitle": "¡Cremosidad con un toque crujiente!",
       "description": "Una mezcla cremosa con deliciosos trocitos de galleta que aportan contraste y hacen especial cada cucharada.",
-      "image": "assets/sabor-2-1794896510754.png",
+      "image": "assets/heladisimo-galletas-y-crema.png",
       "focus": "37% 48%",
       "zoom": 2.15
     },
@@ -57,7 +57,7 @@
       "name": "Fresa con Crema",
       "subtitle": "¡Suavidad y frescura en cada bocado!",
       "description": "El sabor frutal de la fresa se combina con una base suave y cremosa para crear un clásico fresco, ligero y lleno de alegría.",
-      "image": "assets/sabor-3-1794897563832.png",
+      "image": "assets/heladisimo-fresa-con-crema.png",
       "focus": "55% 48%",
       "zoom": 2.15
     },
@@ -65,7 +65,7 @@
       "name": "Cereza Fresa",
       "subtitle": "¡Una explosión de sabor frutal!",
       "description": "Una combinación vibrante de cereza y fresa, con notas dulces y refrescantes que resaltan el carácter natural de las frutas.",
-      "image": "assets/sabor-4-1794897561099.png",
+      "image": "assets/heladisimo-cereza-fresa.png",
       "focus": "72% 48%",
       "zoom": 2.15
     },
@@ -73,7 +73,7 @@
       "name": "Chinola",
       "subtitle": "¡Toda la intensidad del trópico!",
       "description": "Refrescante y tropical, con el aroma y el sabor característico de la chinola en una receta artesanal de personalidad intensa.",
-      "image": "assets/sabor-5-1794897566237.png",
+      "image": "assets/heladisimo-chinola.png",
       "focus": "88% 48%",
       "zoom": 2.15
     },
@@ -81,7 +81,7 @@
       "name": "Guanabana",
       "subtitle": "¡Una delicia tropical irresistible!",
       "description": "Una propuesta tropical de textura delicada y sabor naturalmente dulce, inspirada en la suavidad inconfundible de la guanábana.",
-      "image": "assets/sabor-6-1794897568335.png",
+      "image": "assets/heladisimo-guanabana.png",
       "focus": "50% 50%",
       "zoom": 1
     },
@@ -89,7 +89,7 @@
       "name": "Nutella",
       "subtitle": "¡Puro placer de chocolate y avellanas!",
       "description": "Cremoso, intenso y reconfortante, con el sabor irresistible del chocolate y las avellanas en una presentación hecha para consentirte.",
-      "image": "assets/sabor-7-1794898577771.png",
+      "image": "assets/heladisimo-nutella.png",
       "focus": "50% 50%",
       "zoom": 1
     },
@@ -97,7 +97,7 @@
       "name": "Coco con Batata y Leche",
       "subtitle": "¡El sabor de nuestras tradiciones!",
       "description": "Una combinación con identidad dominicana que une la suavidad del coco con el sabor cálido de la batata en una receta artesanal única.",
-      "image": "assets/sabor-8-1794898643208.png",
+      "image": "assets/heladisimo-coco-batata-leche.png",
       "focus": "50% 50%",
       "zoom": 1
     },
@@ -105,7 +105,7 @@
       "name": "Ciruela",
       "subtitle": "¡Dulzura frutal con personalidad!",
       "description": "Un sabor frutal distinto, equilibrado entre dulzura y frescura, con la personalidad de la ciruela y el sello artesanal de HELADÍSIMO.",
-      "image": "assets/sabor-9-1794898860735.png",
+      "image": "assets/heladisimo-ciruela.png",
       "focus": "50% 50%",
       "zoom": 1
     },
@@ -113,7 +113,7 @@
       "name": "Tamarindo",
       "subtitle": "¡Un toque ácido, una dulzura irresistible!",
       "description": "Descubre el auténtico sabor del tamarindo en un helado artesanal lleno de frescura y personalidad. Su deliciosa combinación de notas dulces y ligeramente ácidas despierta tus sentidos y te transporta a los sabores tradicionales del Caribe.\n\n¡Un clásico tropical que refresca y conquista desde el primer bocado!",
-      "image": "assets/sabor-10-1794959000437.png",
+      "image": "assets/heladisimo-tamarindo.png",
       "focus": "50% 50%",
       "zoom": 1
     },
@@ -121,7 +121,7 @@
       "name": "Pitahaya ",
       "subtitle": "¡Un exótico placer tropical!",
       "description": "Descubre la delicada dulzura de la pitahaya en un helado artesanal lleno de frescura y color. Su sabor suave, sus notas tropicales y su personalidad exótica hacen de cada bocado una experiencia diferente y refrescante.",
-      "image": "assets/sabor-11-1794960754224.jpg",
+      "image": "assets/heladisimo-pitahaya.png",
       "focus": "50% 50%",
       "zoom": 1
     },
@@ -129,7 +129,7 @@
       "name": "Vino ",
       "subtitle": "¡Un sabor intenso y diferente!",
       "description": "Una propuesta refrescante y llena de personalidad, con deliciosas notas afrutadas que evocan el carácter del vino y un toque de dulzura que hace especial cada bocado.",
-      "image": "assets/sabor-12-1794960617344.jpg",
+      "image": "assets/heladisimo-vino.png",
       "focus": "50% 50%",
       "zoom": 1
     },
@@ -137,7 +137,7 @@
       "name": "Coco con Leche",
       "subtitle": "¡La cremosidad del paraíso tropical!",
       "description": "Déjate conquistar por la irresistible combinación del auténtico sabor del coco y la suavidad de la leche. Un helado artesanal de textura cremosa, delicada dulzura y exquisitas notas tropicales que hacen de cada bocado un momento especial.\n\n¡Una deliciosa caricia tropical que refresca y enamora!",
-      "image": "assets/sabor-13-1794961362054.png",
+      "image": "assets/heladisimo-coco-con-leche.png",
       "focus": "50% 50%",
       "zoom": 1
     }
@@ -225,13 +225,13 @@
       "name": "Selección tropical",
       "flavors": "Coco con batata · Chinola · Pitahaya",
       "badge": "3 sabores · 4 de cada uno",
-      "image": "assets/docena-surtida-tropical.png"
+      "image": "assets/heladisimo-docena-tropical.png"
     },
     {
       "name": "Selección cremosa",
       "flavors": "Dulce de leche · Galletas y crema · Fresa con leche",
       "badge": "3 sabores · 4 de cada uno",
-      "image": "assets/docena-surtida-cremosa.png"
+      "image": "assets/heladisimo-docena-cremosa.png"
     }
   ],
   "seasonalSection": {
@@ -245,7 +245,7 @@
       "name": "Mango",
       "subtitle": "Tropical, cremoso y naturalmente refrescante.",
       "badge": "Disponible por tiempo limitado",
-      "image": "assets/temporada-1-1794899600324.png"
+      "image": "assets/heladisimo-mango-temporada.png"
     }
   ],
   "sales": {
