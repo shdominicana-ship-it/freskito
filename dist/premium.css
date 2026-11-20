@@ -47,4 +47,4 @@ body.dialog-open{overflow:hidden}.flavor-dialog{width:min(1040px,calc(100% - 32p
 .assorted-boxes{background:linear-gradient(145deg,#18120f 0%,#36271d 72%,#5a3e27 100%)}.assorted-card-media{background:#18120f}
 
 /* La presentación maestra ya incluye sus rótulos; no los tapamos con texto. */
-.carousel-slide-group::after,.carousel-slide-group .carousel-caption{display:none}
+.carousel-slide-group::after,.carousel-slide-group .carousel-caption,.hero-carousel.showing-group .carousel-dots{display:none}

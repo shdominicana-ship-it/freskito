@@ -41,10 +41,10 @@ function configureCarousel(content){
     const dot=document.createElement('button');dot.type='button';dot.className=`carousel-dot${index===0?' active':''}`;dot.setAttribute('role','tab');dot.setAttribute('aria-label',`Mostrar ${item.name}`);dot.setAttribute('aria-selected',String(index===0));dot.addEventListener('click',()=>show(index,true));dots.appendChild(dot);return slide;
   });
   const dotButtons=[...dots.children];
-  function show(index,manual=false){active=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{const selected=i===active;slide.classList.toggle('active',selected);slide.setAttribute('aria-hidden',String(!selected));dotButtons[i].classList.toggle('active',selected);dotButtons[i].setAttribute('aria-selected',String(selected))});if(manual)restart()}
+  function show(index,manual=false){active=(index+slides.length)%slides.length;slides.forEach((slide,i)=>{const selected=i===active;slide.classList.toggle('active',selected);slide.setAttribute('aria-hidden',String(!selected));dotButtons[i].classList.toggle('active',selected);dotButtons[i].setAttribute('aria-selected',String(selected))});carousel.classList.toggle('showing-group',Boolean(slidesData[active]?.isGroup));if(manual)restart()}
   function restart(){clearInterval(timer);if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)timer=setInterval(()=>show(active+1),3600)}
   carousel.querySelector('.carousel-prev').onclick=()=>show(active-1,true);carousel.querySelector('.carousel-next').onclick=()=>show(active+1,true);
-  carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',restart);carousel.addEventListener('focusin',()=>clearInterval(timer));carousel.addEventListener('focusout',restart);restart();
+  carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',restart);carousel.addEventListener('focusin',()=>clearInterval(timer));carousel.addEventListener('focusout',restart);show(0);restart();
 }
 
 function configureFlavorCatalog(content){
