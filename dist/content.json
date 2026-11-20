@@ -25,18 +25,9 @@
     "description": "Una experiencia artesanal en cada bocado. Descubre sabores clásicos y tropicales, preparados para convertir cualquier momento en algo especial.",
     "sealTop": "100 %",
     "sealBottom": "NATURAL",
-    "image": "assets/imagen-principal-1795217857942.jpg"
+    "image": "assets/imagen-principal-1795217794104.jpg"
   },
   "heroSlides": [
-    {
-      "name": "Cuatro sabores para disfrutar",
-      "subtitle": "HELADÍSIMO · Helados artesanales · 100 % natural",
-      "description": "Presentación oficial de Chinola, Fresa Crema, Galletas y Crema y Coco.",
-      "image": "assets/heladisimo-cuatro-sabores.jpg",
-      "focus": "50% 50%",
-      "zoom": 1,
-      "isGroup": true
-    },
     {
       "name": "Dulce de leche",
       "subtitle": "¡Cremoso, irresistible y delicioso!",
