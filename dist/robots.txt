@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shdominicana-ship-it.github.io/freskito/sitemap.xml
