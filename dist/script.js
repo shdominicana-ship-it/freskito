@@ -63,8 +63,7 @@ function configureCarousel(content){
   const progress=carousel.querySelector('[data-carousel-progress]');
   const toggle=status.querySelector('[data-carousel-toggle]');
   const toggleLabel=toggle?.querySelector('[data-carousel-toggle-label]');
-  const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
-  const duration=5500;
+  const duration=4200;
   let active=0;
   let timer;
   let userPaused=false;
@@ -72,7 +71,7 @@ function configureCarousel(content){
   currentLabel?.closest('[aria-live]')?.setAttribute('aria-live','off');
   const slides=slidesData.map((item,index)=>{
     const slide=document.createElement('article');slide.className=`carousel-slide${index===0?' active':''}`;if(item.isGroup)slide.classList.add('carousel-slide-group');slide.setAttribute('aria-label',`${index+1} de ${slidesData.length}: ${item.name}`);slide.setAttribute('aria-hidden',String(index!==0));slide.style.setProperty('--slide-focus','50% 50%');slide.style.setProperty('--slide-zoom','1');
-    const image=document.createElement('img');image.src=item.image;image.alt=item.isGroup?'Presentación de sabores HELADÍSIMO':`Helado HELADÍSIMO sabor ${item.name}`;image.loading=index===0?'eager':'lazy';image.decoding='async';if(index===0)image.fetchPriority='high';fitFlavorImage(image,slide);
+    const image=document.createElement('img');image.src=item.image;image.alt=item.isGroup?'Presentación de sabores HELADÍSIMO':`Helado HELADÍSIMO sabor ${item.name}`;image.loading=index<3?'eager':'lazy';image.decoding='async';if(index===0)image.fetchPriority='high';fitFlavorImage(image,slide);
     const caption=document.createElement('div');caption.className='carousel-caption';const small=document.createElement('small');small.textContent=item.subtitle||'Helado artesanal';const strong=document.createElement('strong');strong.textContent=item.name;caption.append(small,strong);slide.append(image,caption);track.appendChild(slide);
     return slide;
   });
@@ -84,7 +83,7 @@ function configureCarousel(content){
   }
   function scheduleAutoplay(){
     stopAutoplay();
-    const canPlay=slides.length>1&&!userPaused&&!reducedMotion.matches&&!document.hidden&&!carousel.matches(':hover')&&!carousel.contains(document.activeElement);
+    const canPlay=slides.length>1&&!userPaused&&!document.hidden;
     if(!canPlay)return;
     carousel.classList.add('is-playing');
     if(progress){
@@ -106,7 +105,7 @@ function configureCarousel(content){
   }
   function updateToggle(){
     if(!toggle)return;
-    toggle.hidden=slides.length<=1||reducedMotion.matches;
+    toggle.hidden=slides.length<=1;
     toggle.setAttribute('aria-pressed',String(userPaused));
     if(toggleLabel)toggleLabel.textContent=userPaused?'Reproducir':'Pausar';else toggle.textContent=userPaused?'Reproducir':'Pausar';
     toggle.setAttribute('aria-label',userPaused?'Reproducir carrusel automático':'Pausar carrusel automático');
@@ -114,10 +113,6 @@ function configureCarousel(content){
   carousel.querySelector('.carousel-prev')?.addEventListener('click',()=>show(active-1,true));
   carousel.querySelector('.carousel-next')?.addEventListener('click',()=>show(active+1,true));
   toggle?.addEventListener('click',()=>{userPaused=!userPaused;updateToggle();scheduleAutoplay()});
-  carousel.addEventListener('mouseenter',stopAutoplay);
-  carousel.addEventListener('mouseleave',scheduleAutoplay);
-  carousel.addEventListener('focusin',stopAutoplay);
-  carousel.addEventListener('focusout',event=>{if(!carousel.contains(event.relatedTarget))requestAnimationFrame(scheduleAutoplay)});
   carousel.addEventListener('keydown',event=>{
     if(event.key==='ArrowLeft'){event.preventDefault();show(active-1,true)}
     if(event.key==='ArrowRight'){event.preventDefault();show(active+1,true)}
@@ -131,8 +126,7 @@ function configureCarousel(content){
     if(Math.abs(deltaX)>45&&Math.abs(deltaX)>Math.abs(deltaY))show(deltaX<0?active+1:active-1,true);else scheduleAutoplay();
   },{passive:true});
   document.addEventListener('visibilitychange',scheduleAutoplay);
-  const handleMotionChange=()=>{updateToggle();scheduleAutoplay()};
-  if(typeof reducedMotion.addEventListener==='function')reducedMotion.addEventListener('change',handleMotionChange);else reducedMotion.addListener(handleMotionChange);
+  carousel.dataset.autoplay='true';
   show(0);updateToggle();scheduleAutoplay();
 }
 

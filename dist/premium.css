@@ -62,28 +62,28 @@ body.dialog-open{overflow:hidden}.flavor-dialog{width:min(1040px,calc(100% - 32p
   --premium-shadow:0 22px 60px rgba(27,21,16,.12)
 }
 
-html{scroll-padding-top:142px;overflow-x:clip}
+html{scroll-padding-top:176px;overflow-x:clip}
 body{background:var(--premium-paper);color:var(--premium-navy)}
 body{overflow-x:clip}
 body.menu-open{overflow:hidden}
-section{scroll-margin-top:142px}
+section{scroll-margin-top:176px}
 :where(a,button,[tabindex]):focus-visible{outline:3px solid var(--premium-yellow);outline-offset:4px}
 
 /* Encabezado de marca: más visible, estable y siempre accesible. */
 .site-header{
   position:sticky;
   top:0;
-  height:132px;
+  height:166px;
   z-index:50;
-  background:rgba(255,248,235,.91);
+  background:rgba(255,248,235,.98);
   border-bottom:1px solid rgba(27,21,16,.08);
   box-shadow:0 10px 30px rgba(27,21,16,.07);
-  backdrop-filter:blur(18px) saturate(1.15);
-  -webkit-backdrop-filter:blur(18px) saturate(1.15)
+  backdrop-filter:blur(12px) saturate(1.05);
+  -webkit-backdrop-filter:blur(12px) saturate(1.05)
 }
-.nav{height:132px}
-.brand{width:158px;height:132px;flex:0 0 158px}
-.brand img{width:auto;height:126px;max-width:100%;filter:drop-shadow(0 7px 15px rgba(27,21,16,.12))}
+.nav{height:166px}
+.brand{width:192px;height:166px;flex:0 0 192px;display:flex;align-items:center;justify-content:flex-start}
+.brand img{width:auto;height:160px;max-width:100%;object-fit:contain;image-rendering:auto;filter:none}
 .nav-links{gap:24px;color:var(--premium-navy);font-size:14px}
 .nav-links>a:not(.nav-cta):after{background:var(--premium-orange)}
 .nav-cta{background:var(--premium-navy);border-color:var(--premium-navy);color:#fff}
@@ -263,20 +263,20 @@ footer{padding:58px 0 34px;background:#15100d;color:#f4ebdf}
 
 @media(max-width:1040px){
   .nav-links{gap:17px;font-size:13px}
-  .brand{width:150px;flex-basis:150px}
+  .brand{width:174px;flex-basis:174px}
   .hero-grid{gap:42px}
   .footer-grid{grid-template-columns:1fr 1fr auto}
 }
 
 @media(max-width:900px){
-  html{scroll-padding-top:116px}
-  section{scroll-margin-top:116px}
-  .site-header,.nav{height:112px}
-  .brand{width:130px;height:112px;flex-basis:130px}
-  .brand img{height:108px}
+  html{scroll-padding-top:140px}
+  section{scroll-margin-top:140px}
+  .site-header,.nav{height:132px}
+  .brand{width:150px;height:132px;flex-basis:150px}
+  .brand img{height:128px}
   .nav-links{color:#fff;background:rgba(27,21,16,.98);backdrop-filter:blur(18px)}
   .nav-links{display:none;transform:none}
-  .nav-links.open{display:flex;padding:112px 24px 46px}
+  .nav-links.open{display:flex;padding:132px 24px 46px}
   .menu-button{background:#fff;border:1px solid rgba(27,21,16,.08)}
   .hero{min-height:auto;padding:42px 0 78px}
   .hero-grid{grid-template-columns:1fr;gap:54px}
@@ -286,12 +286,12 @@ footer{padding:58px 0 34px;background:#15100d;color:#f4ebdf}
 }
 
 @media(max-width:650px){
-  html{scroll-padding-top:102px}
-  section{scroll-margin-top:102px}
-  .site-header,.nav{height:100px}
-  .site-header{background:rgba(255,248,235,.94)}
-  .brand{width:116px;height:100px;flex-basis:116px}
-  .brand img{height:100px}
+  html{scroll-padding-top:132px}
+  section{scroll-margin-top:132px}
+  .site-header,.nav{height:124px}
+  .site-header{background:rgba(255,248,235,.99)}
+  .brand{width:138px;height:124px;flex-basis:138px}
+  .brand img{height:122px}
   .menu-button{width:44px;height:44px}
   .hero{padding:24px 0 64px}
   .hero-wave{left:0;width:100%}
